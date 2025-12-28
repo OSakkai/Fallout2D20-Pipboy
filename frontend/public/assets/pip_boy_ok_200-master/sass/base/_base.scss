@@ -1,0 +1,66 @@
+@use "../abstracts/variables" as v;
+
+*,
+*::after,
+*::before {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: v.$font-size;
+}
+
+html, body {
+  overflow: hidden;
+}
+
+body {
+  background: var(--pip-boy-background-color);
+  box-sizing: border-box;
+}
+
+#overlay {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: v.$overlay-width;
+}
+
+/** RESPONSIVE ********************************************************************************************************/
+@each $breakpoint, $factor in v.$responsive-width-breakpoints {
+  @media screen and (max-width: $breakpoint) {
+    html {
+      font-size: v.$font-size * $factor;
+    }
+    #overlay {
+      width: v.$overlay-width * $factor;
+    }
+    #header-line-before, #header-line-after {
+      width: v.$header-line-width * $factor;
+    }
+  }
+}
+
+@media screen and (max-height: 740px) and (min-width: 960px) {
+  html {
+    font-size: v.$font-size * 0.5;
+  }
+  #overlay {
+    width: v.$overlay-width * 0.5;
+  }
+  #header-line-before, #header-line-after {
+    width: v.$header-line-width * 0.5;
+  }
+}
+
+@media screen and (max-height: 500px), screen and(max-width: 340px) {
+  .screen {
+    display: none;
+  }
+}
+
