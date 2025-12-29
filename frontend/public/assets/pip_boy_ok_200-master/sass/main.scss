@@ -1,0 +1,22 @@
+// How to install SASS :
+// https://www.jetbrains.com/help/idea/transpiling-sass-less-and-scss-to-css.html#ws_sass_less_scss_syntax_highlighting
+
+// How to setup php project for intelliJ : https://www.jetbrains.com/help/idea/php-specific-guidelines.html
+
+// Graphic ressources : https://fallout-archive.fandom.com/wiki/The_Vault_Fallout_Wiki
+
+@use "base/base";
+@use "base/typograpy";
+
+@use "components/health_gauges";
+
+@use "layout/header";
+@use "layout/screen";
+@use "layout/sub_header";
+@use "layout/bottom_display";
+@use "layout/header_lines";
+
+@use "pages/menu";
+@use "pages/stat_status";
+@use "pages/color";
+@use "pages/map";

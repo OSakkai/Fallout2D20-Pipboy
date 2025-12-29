@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String      @id @default(uuid())
+  email     String      @unique
+  password  String
+  role      Role        @default(PLAYER)
+  characters Character[]
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@map("users")
+}
+
+enum Role {
+  PLAYER
+  GM
+}
+
+model Character {
+  id           String   @id @default(uuid())
+  name         String
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // SPECIAL stats
+  strength     Int      @default(5)
+  perception   Int      @default(5)
+  endurance    Int      @default(5)
+  charisma     Int      @default(5)
+  intelligence Int      @default(5)
+  agility      Int      @default(5)
+  luck         Int      @default(5)
+
+  // Status
+  currentHP    Int
+  maxHP        Int
+  level        Int      @default(1)
+  xp           Int      @default(0)
+
+  inventory    Item[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("characters")
+}
+
+model Item {
+  id          String       @id @default(uuid())
+  name        String
+  category    ItemCategory
+  weight      Float
+  value       Int
+  characterId String
+  character   Character    @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@map("items")
+}
+
+enum ItemCategory {
+  WEAPON
+  APPAREL
+  AID
+  MISC
+  JUNK
+  AMMO
+}

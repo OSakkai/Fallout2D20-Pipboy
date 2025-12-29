@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./Fallout2D20-Pipboy/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./Fallout2D20-Pipboy/frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_URL=http://localhost:3000
+    depends_on:
+      - backend
+    command: npm run dev
+
+  backend:
+    build:
+      context: ./Fallout2D20-Pipboy/backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./Fallout2D20-Pipboy/backend:/app
+      - /app/node_modules
+    environment:
+      - DATABASE_URL=postgresql://postgres:fallout2d20@db:5432/fallout_pipboy
+      - JWT_SECRET=fallout_pipboy_jwt_secret_change_in_production
+      - PORT=3000
+      - NODE_ENV=development
+    depends_on:
+      - db
+    command: npm run start:dev
+
+  db:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=fallout2d20
+      - POSTGRES_DB=fallout_pipboy
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

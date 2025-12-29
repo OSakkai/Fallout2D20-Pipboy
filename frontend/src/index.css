@@ -1,0 +1,81 @@
+/* Reset e configuração base para o Pip-Boy */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Tipografia autêntica Pip-Boy (DEVGUIDE) */
+  font-family: "Monofonto", "VT323", "Inconsolata", "Courier New", monospace;
+  line-height: 1.2;
+  font-weight: 400;
+
+  color-scheme: dark;
+  /* Cor verde autêntica Fallout 4: RGB(18, 255, 21) */
+  color: #12FF15;
+  background-color: #000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  /* Gradiente radial de fundo autêntico (DEVGUIDE) */
+  background: #000;
+  background-image: radial-gradient(#11581e, #041607);
+}
+
+/* Scrollbar personalizada estilo Pip-Boy */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+  border: 2px solid #12FF15;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #12FF15;
+  filter: brightness(0.7);
+  box-shadow: 0 0 10px rgba(18, 255, 21, 0.4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0 15px rgba(18, 255, 21, 0.6);
+}
+
+/* Seleção de texto */
+::selection {
+  background: #12FF15;
+  color: #000;
+  filter: brightness(0.7);
+}
+
+/* Remover estilos padrão de botões e inputs */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  color: inherit;
+}
