@@ -3,12 +3,12 @@ version: '3.8'
 services:
   frontend:
     build:
-      context: ./Fallout2D20-Pipboy/frontend
+      context: ./frontend
       dockerfile: Dockerfile
     ports:
       - "5173:5173"
     volumes:
-      - ./Fallout2D20-Pipboy/frontend:/app
+      - ./frontend:/app
       - /app/node_modules
     environment:
       - VITE_API_URL=http://localhost:3000
@@ -18,12 +18,12 @@ services:
 
   backend:
     build:
-      context: ./Fallout2D20-Pipboy/backend
+      context: ./backend
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
-      - ./Fallout2D20-Pipboy/backend:/app
+      - ./backend:/app
       - /app/node_modules
     environment:
       - DATABASE_URL=postgresql://postgres:fallout2d20@db:5432/fallout_pipboy
