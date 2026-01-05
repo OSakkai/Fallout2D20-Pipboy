@@ -5,16 +5,26 @@ Interface autêntica do Pip-Boy 3000 Mk IV para o sistema de RPG de mesa Fallout
 ## 🎮 Features Implementadas
 
 ### Frontend (React + TypeScript + Vite)
+- ✅ **ROBCO Terminal Interface**
+  - LoginScreen com visual autêntico ROBCO Industries
+  - MainMenu com monitor frame e efeitos CRT
+  - Sistema de autenticação JWT (Login/Register/Guest)
+  - DEV TOOLS menu com page navigation e API testing
+  - Transições suaves com Framer Motion
+  - Beep sounds autênticos do Pip-Boy
+
 - ✅ **Visual Autêntico Fallout 4**
   - Cor oficial: `#12FF15` (RGB 18, 255, 21)
   - Fonte: Monofonto (oficial Pip-Boy)
   - Efeitos CRT com scanlines e chromatic aberration
   - Gradiente radial de fundo autêntico
   - Overlay físico do Pip-Boy como decoração
+  - Monitor frame com TV bezel e phosphorescent glow
 
 - ✅ **Sistema de Sons**
   - 7 tipos de beeps/clicks gerados via Web Audio API
   - Sons de hover, click, select, tab change, boot, error, static
+  - beepPipboy.mp3 para interações do terminal
 
 - ✅ **5 Tabs Completas**
   - **STAT**: SPECIAL, Status, Perks
@@ -39,11 +49,20 @@ Interface autêntica do Pip-Boy 3000 Mk IV para o sistema de RPG de mesa Fallout
   - Passport.js + JWT tokens
   - Roles: PLAYER e GM (Game Master)
   - Guards para rotas protegidas
+  - Modo Guest para acesso sem cadastro
+  - Username único para cada usuário
 
 - ✅ **Módulos CRUD Completos**
   - Characters: SPECIAL stats, HP, level, XP
-  - Items: Categorias (WEAPON, APPAREL, AID, MISC, JUNK, AMMO)
-  - Relações User ↔ Character ↔ Items
+  - Items: Categorias (WEAPON, ARMOR, AID, MISC, AMMO)
+  - Parties: Criação de sessões com código único
+  - Relações User ↔ Character ↔ Items ↔ Parties
+
+- ✅ **Swagger API Documentation**
+  - Documentação interativa completa
+  - Schemas de request/response
+  - Autenticação Bearer JWT
+  - Disponível em: `http://localhost:3000/api`
 
 - ✅ **WebSocket Real-time (Socket.io)**
   - Eventos de combate preparados (damage, healing, movement)
@@ -98,8 +117,10 @@ Inicie todo o ambiente (frontend + backend + database) com um único comando:
 docker-compose up
 ```
 
+**URLs de Acesso:**
 - Frontend: `http://localhost:5173`
 - Backend API: `http://localhost:3000`
+- Swagger Docs: `http://localhost:3000/api`
 - PostgreSQL: `localhost:5432`
 
 ### Opção 2: Desenvolvimento Local
@@ -123,7 +144,9 @@ npx prisma migrate dev --name init
 npm run start:dev
 ```
 
-Backend estará em `http://localhost:3000`
+Backend estará em:
+- API: `http://localhost:3000`
+- Swagger: `http://localhost:3000/api`
 
 #### Frontend
 

@@ -8,13 +8,15 @@ datasource db {
 }
 
 model User {
-  id        String      @id @default(uuid())
-  email     String      @unique
-  password  String
-  role      Role        @default(PLAYER)
+  id         String      @id @default(uuid())
+  email      String      @unique
+  username   String      @unique
+  password   String
+  role       Role        @default(PLAYER)
   characters Character[]
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt
+  gmParties  Party[]     @relation("GMParties")
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
 
   @@map("users")
 }
@@ -25,29 +27,30 @@ enum Role {
 }
 
 model Character {
-  id           String   @id @default(uuid())
+  id           String           @id @default(uuid())
   name         String
   userId       String
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user         User             @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   // SPECIAL stats
-  strength     Int      @default(5)
-  perception   Int      @default(5)
-  endurance    Int      @default(5)
-  charisma     Int      @default(5)
-  intelligence Int      @default(5)
-  agility      Int      @default(5)
-  luck         Int      @default(5)
+  strength     Int              @default(5)
+  perception   Int              @default(5)
+  endurance    Int              @default(5)
+  charisma     Int              @default(5)
+  intelligence Int              @default(5)
+  agility      Int              @default(5)
+  luck         Int              @default(5)
 
   // Status
   currentHP    Int
   maxHP        Int
-  level        Int      @default(1)
-  xp           Int      @default(0)
+  level        Int              @default(1)
+  xp           Int              @default(0)
 
   inventory    Item[]
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  parties      CharacterParty[]
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
 
   @@map("characters")
 }
@@ -73,4 +76,38 @@ enum ItemCategory {
   MISC
   JUNK
   AMMO
+}
+
+model Party {
+  id         String           @id @default(uuid())
+  code       String           @unique
+  name       String
+  gmUserId   String
+  gmUser     User             @relation("GMParties", fields: [gmUserId], references: [id], onDelete: Cascade)
+  status     PartyStatus      @default(ACTIVE)
+  maxPlayers Int              @default(6)
+  characters CharacterParty[]
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+
+  @@map("parties")
+}
+
+enum PartyStatus {
+  ACTIVE
+  PAUSED
+  FINISHED
+}
+
+model CharacterParty {
+  id          String    @id @default(uuid())
+  characterId String
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  partyId     String
+  party       Party     @relation(fields: [partyId], references: [id], onDelete: Cascade)
+  joinedAt    DateTime  @default(now())
+  leftAt      DateTime?
+
+  @@unique([characterId, partyId])
+  @@map("character_parties")
 }

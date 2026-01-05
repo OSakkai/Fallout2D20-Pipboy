@@ -1,0 +1,97 @@
+═══════════════════════════════════════════════════════════
+  ⚡ TESTE RÁPIDO - 2 MINUTOS
+═══════════════════════════════════════════════════════════
+
+🎯 LINK: http://192.168.100.111:5173
+
+═══════════════════════════════════════════════════════════
+📱 PASSO A PASSO NO TABLET/CELULAR
+═══════════════════════════════════════════════════════════
+
+1️⃣  Abra o navegador
+2️⃣  Digite: 192.168.100.111:5173
+3️⃣  Você verá:
+
+    ████████████████████████████████████████████
+    ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM
+    ████████████████████████████████████████████
+    FALLOUT 2D20 TABLETOP SYSTEM v1.0
+    ------------------------------------------------
+
+4️⃣  Escolha uma opção:
+
+    OPÇÃO A - MODO RÁPIDO (SEM CADASTRO)
+    ─────────────────────────────────────
+    ▶ Clique em: [ ENTRAR SEM CONTA - MODO LOCAL ]
+    ▶ Você vai direto para o Main Menu
+    ⚠️  Sem salvamento na nuvem
+
+    OPÇÃO B - CRIAR CONTA
+    ─────────────────────────────────────
+    ▶ Clique no botão verde: > REGISTRAR
+    ▶ Digite seu email (ex: seu.email@teste.com)
+    ▶ Digite uma senha (mínimo 6 caracteres)
+    ▶ Confirme a senha
+    ▶ Clique em: [ CRIAR CONTA ]
+    ✅ Conta salva no banco de dados
+
+    OPÇÃO C - FAZER LOGIN (se já criou conta)
+    ─────────────────────────────────────
+    ▶ Clique no botão: > LOGIN
+    ▶ Digite email e senha
+    ▶ Clique em: [ ACESSAR SISTEMA ]
+
+5️⃣  Após login, você verá o MAIN MENU:
+
+    ════════════════════════════════════════
+    > NEW GAME        <- Use setas ↑↓
+      LOAD GAME
+      SETTINGS
+      EXIT
+    ════════════════════════════════════════
+
+    ▶ Navegue com SETAS ↑↓ do teclado
+    ▶ Ou clique com o mouse
+    ▶ Pressione ENTER para selecionar
+    ▶ EXIT volta para tela de login
+
+═══════════════════════════════════════════════════════════
+✅ O QUE ESTÁ FUNCIONANDO
+═══════════════════════════════════════════════════════════
+
+[✓] Tela de login com estética Terminal ROBCO
+[✓] Registro de nova conta
+[✓] Login com email/senha
+[✓] Modo convidado (sem cadastro)
+[✓] Main Menu com navegação por teclado
+[✓] Botão EXIT funciona
+[✓] Verde fosforescente autêntico do Fallout
+[✓] Efeitos de scanline CRT
+[✓] Todos os textos em português
+
+═══════════════════════════════════════════════════════════
+⚠️ SE DER ERRO
+═══════════════════════════════════════════════════════════
+
+1. Limpe o cache: Ctrl + Shift + Del (ou Cmd + Shift + Del)
+2. Faça hard refresh: Ctrl + Shift + R (ou Cmd + Shift + R)
+3. Tente abrir em modo anônimo
+4. Verifique se está na mesma rede Wi-Fi
+5. Tente http://localhost:5173 no PC
+
+═══════════════════════════════════════════════════════════
+🎮 CONTAS DE TESTE JÁ CRIADAS
+═══════════════════════════════════════════════════════════
+
+Email: teste@vault.com
+Senha: 123456
+
+Email: usuario.teste@fallout.com
+Senha: vault123
+
+(Você pode criar mais contas se quiser!)
+
+═══════════════════════════════════════════════════════════
+          🚀 Sistema 100% operacional!
+          Divirta-se testando! ⚡
+═══════════════════════════════════════════════════════════

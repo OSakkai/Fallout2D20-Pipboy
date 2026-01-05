@@ -3,6 +3,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { CharactersModule } from './modules/characters/characters.module';
 import { ItemsModule } from './modules/items/items.module';
 import { WebsocketModule } from './modules/websocket/websocket.module';
+import { PartiesModule } from './modules/parties/parties.module';
 import { PrismaModule } from './database/prisma.module';
 
 @Module({
@@ -12,6 +13,7 @@ import { PrismaModule } from './database/prisma.module';
     CharactersModule,
     ItemsModule,
     WebsocketModule,
+    PartiesModule,
   ],
 })
 export class AppModule {}

@@ -436,7 +436,7 @@ const ContinuousTyping = ({ lines, onComplete }: { lines: string[]; onComplete?:
 export const PipBoy = () => {
   const [activeTab, setActiveTab] = useState<PipBoyTab>('stat');
   const [bootStage, setBootStage] = useState<BootStage>('off');
-  const [userInteracted, setUserInteracted] = useState(false);
+  const [userInteracted, setUserInteracted] = useState(true); // Já inicia como true
   const [isChannelSwitching, setIsChannelSwitching] = useState(false);
   const bootAudioRef = useRef<HTMLAudioElement | null>(null);
   const idleAudioRef = useRef<HTMLAudioElement | null>(null);
@@ -638,8 +638,6 @@ export const PipBoy = () => {
 
   return (
     <PipBoyContainer>
-      <CRTEffect />
-
       {/* Overlay de interação inicial */}
       {!userInteracted && (
         <StartOverlay
@@ -669,6 +667,7 @@ export const PipBoy = () => {
             <ScreenOutline>
               <ScreenInset>
                 <MonitorBezel>
+                  <CRTEffect />
                   <AnimatePresence mode="wait">
                     {bootStage === 'off' && (
                       <OffScreen
@@ -775,6 +774,7 @@ export const PipBoy = () => {
             <ScreenOutline>
               <ScreenInset>
                 <MonitorBezel>
+                  <CRTEffect />
                   <PipBoyFrame
                     initial={{ opacity: 0, y: '-120%' }}
                     animate={{
