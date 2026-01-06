@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { PIPBOY_SCANLINES } from '../../styles/pipboy-colors';
 
-const CRTOverlay = styled.div`
+interface CRTOverlayProps {
+  $showScanlines?: boolean;
+}
+
+const CRTOverlay = styled.div<CRTOverlayProps>`
   position: absolute;
   top: 0;
   left: 0;
@@ -11,16 +15,17 @@ const CRTOverlay = styled.div`
   z-index: 50;
 
   /* SCANLINES HORIZONTAIS - Reduzido 40% */
-  background-image:
+  background-image: ${props => props.$showScanlines ? `
     repeating-linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.09) 0px,
       rgba(0, 0, 0, 0.09) 1px,
       transparent 1px,
       transparent 2px
-    );
+    )
+  ` : 'none'};
   background-size: 100% 2px;
-  animation: scanlineMove 8s linear infinite;
+  animation: ${props => props.$showScanlines ? 'scanlineMove 8s linear infinite' : 'none'};
 
   /* CRT Horizontal Band Effect - Reduzido 40% */
   &::before {
@@ -30,13 +35,15 @@ const CRTOverlay = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(0deg, transparent 0%, rgba(255, 255, 255, 0.09) 50%, transparent 100%);
+    background-image: ${props => props.$showScanlines ?
+      'linear-gradient(0deg, transparent 0%, rgba(255, 255, 255, 0.09) 50%, transparent 100%)' :
+      'none'};
     background-size: 100% 200px;
-    animation: crtBand 8s linear infinite;
+    animation: ${props => props.$showScanlines ? 'crtBand 8s linear infinite' : 'none'};
     pointer-events: none;
   }
 
-  /* Flicker effect - Reduzido 40% */
+  /* Flicker effect - Reduzido 40% - SEMPRE ATIVO */
   &::after {
     content: '';
     position: absolute;
@@ -108,12 +115,16 @@ const CRTCurvature = styled.div`
   overflow: hidden;
 `;
 
-export const CRTEffect = () => {
+interface CRTEffectProps {
+  showScanlines?: boolean;
+}
+
+export const CRTEffect: React.FC<CRTEffectProps> = ({ showScanlines = true }) => {
   return (
     <>
       <CRTCurvature />
       <VignetteEffect />
-      <CRTOverlay />
+      <CRTOverlay $showScanlines={showScanlines} />
     </>
   );
 };

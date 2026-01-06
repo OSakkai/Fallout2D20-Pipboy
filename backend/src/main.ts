@@ -32,6 +32,7 @@ async function bootstrap() {
     .addTag('characters', 'Gerenciamento de personagens')
     .addTag('parties', 'Gerenciamento de partidas/sessões')
     .addTag('items', 'Gerenciamento de inventário')
+    .addTag('encyclopedia', 'Consulta de dados do Fallout 2D20 Corebook (armas, armaduras, consumíveis, perks, etc)')
     .addBearerAuth(
       {
         type: 'http',

@@ -10,6 +10,7 @@ interface MainMenuProps {
   onSettings: () => void;
   onExit: () => void;
   onNavigateToPipboy: () => void;
+  onNavigateToEncyclopedia: () => void;
   userEmail?: string;
   userName?: string;
   isGuest?: boolean;
@@ -23,6 +24,7 @@ export const MainMenu: React.FC<MainMenuProps> = ({
   onSettings,
   onExit,
   onNavigateToPipboy,
+  onNavigateToEncyclopedia,
   userEmail,
   userName,
   isGuest = false
@@ -56,6 +58,7 @@ export const MainMenu: React.FC<MainMenuProps> = ({
 
   const pageNavItems = [
     { label: 'PIP-BOY', action: () => { playBeep(); onNavigateToPipboy(); } },
+    { label: 'ENCYCLOPEDIA', action: () => { playBeep(); onNavigateToEncyclopedia(); } },
     { label: 'LOGIN SCREEN', action: () => { playBeep(); onExit(); } },
     { label: 'BACK', action: () => { playBeep(); setViewMode('devTools'); } },
   ];

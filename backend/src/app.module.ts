@@ -4,6 +4,7 @@ import { CharactersModule } from './modules/characters/characters.module';
 import { ItemsModule } from './modules/items/items.module';
 import { WebsocketModule } from './modules/websocket/websocket.module';
 import { PartiesModule } from './modules/parties/parties.module';
+import { EncyclopediaModule } from './modules/encyclopedia/encyclopedia.module';
 import { PrismaModule } from './database/prisma.module';
 
 @Module({
@@ -14,6 +15,7 @@ import { PrismaModule } from './database/prisma.module';
     ItemsModule,
     WebsocketModule,
     PartiesModule,
+    EncyclopediaModule,
   ],
 })
 export class AppModule {}

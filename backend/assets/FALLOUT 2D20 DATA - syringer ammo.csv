@@ -1,0 +1,10 @@
+AMMO NAME,EFFECT,COST
+Berserk,"If one or more Effects are rolled for the weapon’s damage, the target becomes frenzied and berserk, attacking the nearest living creature (friend or foe) for the remainder of the scene.",50
+Bleed-Out,The weapon gains the Persistent damage effect.,17
+Bloatfly Larva,"If one or more Effects are rolled for the weapon’s damage, then upon the target’s death, a Bloatfly emerges from their remains.",10
+Endangerol,"If one or more Effects are rolled for the weapon’s damage, the target’s Physical damage resistance is reduced by 2 for the remainder of the scene.",60
+Lock Joint,The weapon gains the Stun damage effect.,40
+Mind Cloud,"If one or more Effects are rolled for the weapon’s damage, the target becomes confused and adds +2 difficulty to all PER tests for a number of rounds equal to the number of Effects rolled.",73
+Pax,"If one or more Effects are rolled for the weapon’s damage, the target cannot take hostile or aggressive actions for a number of rounds equal to the number of Effects rolled.",39
+Radscorpion Venom,The weapon adds +1CD damage and gains the Persistent (Poison) damage effect.,65
+Yellow Belly,"If one or more Effects are rolled for the weapon’s damage, the target must use at least one of their actions each turn to move away from all enemies by the most direct route. This lasts for a number of rounds equal to the number of Effects rolled.",55

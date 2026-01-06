@@ -1,0 +1,57 @@
+TYPE,ITEM,DR (PHYSICAL),DR (ENERGY),DR (RADIATION),LOCATIONS COVERED,WEIGHT,COST,RARITY
+Raider Armor,Raider Chest Piece,1,1,0,Torso,7,18,0
+Raider Armor,Raider Leg,1,1,0,Leg,3,8,0
+Raider Armor,Raider Arm,1,1,0,Arm,3,6,0
+Raider Armor,Sturdy Raider Chest Piece,2,2,0,Torso,12,33,1
+Raider Armor,Sturdy Raider Leg,2,2,0,Leg,7,13,1
+Raider Armor,Sturdy Raider Arm,2,2,0,Arm,7,8,1
+Raider Armor,Heavy Raider Chest Piece,3,3,0,Torso,17,48,2
+Raider Armor,Heavy Raider Leg,3,3,0,Leg,10,18,2
+Raider Armor,Heavy Raider Arm,3,3,0,Arm,10,15,2
+Leather Armor,Leather Chest Piece,1,2,0,Torso,5,25,1
+Leather Armor,Leather Leg,1,2,0,Leg,2,10,1
+Leather Armor,Leather Arm,1,2,0,Arm,2,8,1
+Leather Armor,Sturdy Leather Chest Piece,2,3,0,Torso,10,50,2
+Leather Armor,Sturdy Leather Leg,2,3,0,Leg,5,20,2
+Leather Armor,Sturdy Leather Arm,2,3,0,Arm,5,18,2
+Leather Armor,Heavy Leather Chest Piece,3,4,0,Torso,15,75,3
+Leather Armor,Heavy Leather Leg,3,4,0,Leg,7,30,3
+Leather Armor,Heavy Leather Arm,3,4,0,Arm,7,28,3
+Metal Armor,Metal Helmet,2,1,0,Head,3,15,1
+Metal Armor,Metal Chest Piece,2,1,0,Torso,6,40,1
+Metal Armor,Metal Leg,2,1,0,Leg,3,15,1
+Metal Armor,Metal Arm,2,1,0,Arm,3,15,1
+Metal Armor,Sturdy Metal Helmet,3,2,0,Head,8,65,2
+Metal Armor,Sturdy Metal Chest Piece,3,2,0,Torso,16,115,2
+Metal Armor,Sturdy Metal Leg,3,2,0,Leg,8,65,2
+Metal Armor,Sturdy Metal Arm,3,2,0,Arm,8,65,2
+Metal Armor,Heavy Metal Helmet,4,3,0,Head,12,115,3
+Metal Armor,Heavy Metal Chest Piece,4,3,0,Torso,23,190,3
+Metal Armor,Heavy Metal Leg,4,3,0,Leg,12,115,3
+Metal Armor,Heavy Metal Arm,4,3,0,Arm,12,115,3
+Combat Armor,Combat Helmet,2,2,0,Head,4,25,2
+Combat Armor,Combat Chest Piece,2,2,0,Torso,8,60,2
+Combat Armor,Combat Leg,2,2,0,Leg,2,25,2
+Combat Armor,Combat Arm,2,2,0,Arm,2,25,2
+Combat Armor,Sturdy Combat Helmet,3,3,0,Head,5,105,3
+Combat Armor,Sturdy Combat Chest Piece,3,3,0,Torso,12,140,3
+Combat Armor,Sturdy Combat Leg,3,3,0,Leg,5,105,3
+Combat Armor,Sturdy Combat Arm,3,3,0,Arm,5,105,3
+Combat Armor,Heavy Combat Helmet,4,4,0,Head,7,185,4
+Combat Armor,Heavy Combat Chest Piece,4,4,0,Torso,16,220,4
+Combat Armor,Heavy Combat Leg,4,4,0,Leg,7,185,4
+Combat Armor,Heavy Combat Arm,4,4,0,Arm,7,145,4
+Synth Armor,Synth Helmet,2,3,0,Head,3,33,3
+Synth Armor,Synth Chest Piece,2,3,0,Torso,7,75,3
+Synth Armor,Synth Leg,2,3,0,Leg,3,30,3
+Synth Armor,Synth Arm,2,3,0,Arm,3,30,4
+Synth Armor,Sturdy Synth Helmet,3,4,0,Head,7,70,4
+Synth Armor,Sturdy Synth Chest Piece,3,4,0,Torso,12,125,4
+Synth Armor,Sturdy Synth Leg,3,4,0,Leg,7,80,4
+Synth Armor,Sturdy Synth Arm,3,4,0,Arm,7,70,4
+Synth Armor,Heavy Synth Helmet,4,5,0,Head,10,110,5
+Synth Armor,Heavy Synth Chest Piece,4,5,0,Torso,17,175,5
+Synth Armor,Heavy Synth Leg,4,5,0,Leg,10,130,5
+Synth Armor,Heavy Synth Arm,4,5,0,Arm,10,110,5
+Vault-Tec Security Armor,Vault-Tec Security Helmet,2,0,0,Head,2,20,1
+Vault-Tec Security Armor,Vault-Tec Security Armor,2,0,2,"Arms, Legs, Torso",8,16,1

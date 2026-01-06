@@ -1,0 +1,5 @@
+DOG ARMOR ITEM,DR (PHYSICAL),DR (ENERGY),DR (RADIATION),LOCATIONS COVERED,WEIGHT,COST,RARITY
+Dog Helmet,2,1,0,Head,1,7,2
+Light Dog Armor,1,1,0,"Torso, Legs",1,10,1
+Medium Dog Armor,2,2,0,"Torso, Legs",2,15,2
+Heavy Dog Armor,3,3,0,"Torso, Legs",2,20,3

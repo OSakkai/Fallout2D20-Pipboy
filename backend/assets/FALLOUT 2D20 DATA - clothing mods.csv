@@ -1,0 +1,11 @@
+TYPE,MOD,EFFECTS,WEIGHT,COST,PERKS
+JUMPSUIT MODS,Insulated Lining,+1 Energy damage resistance,–,+10,–
+JUMPSUIT MODS,Treated Lining,"+1 Energy damage resistance, '+1 Radiation damage resistance",+1,+20,Armorer 2
+JUMPSUIT MODS,Resistant Lining,"+2 Energy damage resistance, '+1 Radiation damage resistance",+1,+30,Armorer 3
+JUMPSUIT MODS,Protective Lining,"+2 Energy damage resistance, '+2 Radiation damage resistance",+1,+40,"Armorer 4, Science! 2"
+JUMPSUIT MODS,Shielded Lining,"+3 Energy damage resistance, '+3 Radiation damage resistance",+1,+50,"Armorer 4, Science! 4"
+BALLISTIC MODS,Ballistic Weave,"+2 Physical damage resistance, '+2 Energy damage resistance",–,+20,–
+BALLISTIC MODS,Ballistic Weave Mk II,"+3 Physical damage resistance, '+3 Energy damage resistance",–,+30,Armorer 1
+BALLISTIC MODS,Ballistic Weave Mk III,"+4 Physical damage resistance, '+4 Energy damage resistance",–,+40,Armorer 2
+BALLISTIC MODS,Ballistic Weave Mk IV,"+5 Physical damage resistance, '+5 Energy damage resistance",–,+50,Armorer 3
+BALLISTIC MODS,Ballistic Weave Mk V,"+6 Physical damage resistance, '+6 Energy damage resistance",–,+60,Armorer 4

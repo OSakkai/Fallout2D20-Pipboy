@@ -1,0 +1,82 @@
+TYPE,MOD,DR (PHYSICAL),DR (ENERGY),DR (RADIATION),HEALTH POINTS,LOCATION,WEIGHT,COST,PERKS
+T-45 Power Armor Upgrades,T-45b Helm,–,–,–,+1,Head,+1,+3,Armorer 1
+T-45 Power Armor Upgrades,T-45b Chest Piece,–,–,–,+1,Torso,+1,+7,Armorer 1
+T-45 Power Armor Upgrades,T-45b Arm,+1,+1,–,+1,Arm,+1,+7,Armorer 1
+T-45 Power Armor Upgrades,T-45b Leg,+1,+1,–,+1,Leg,+1,+7,Armorer 1
+T-45 Power Armor Upgrades,T-45c Helm,+1,+1,–,+2,Head,+1,+6,Armorer 2
+T-45 Power Armor Upgrades,T-45c Chest Piece,–,–,–,+4,Torso,+2,+14,Armorer 2
+T-45 Power Armor Upgrades,T-45c Arm,+2,+2,–,+2,Arm,+2,+10,Armorer 2
+T-45 Power Armor Upgrades,T-45c Leg,+2,+2,–,+2,Leg,+2,+10,Armorer 2
+T-45 Power Armor Upgrades,T-45d Helm,+1,+1,–,+3,Head,+2,+9,"Armorer 2, Science! 1"
+T-45 Power Armor Upgrades,T-45d Chest Piece,+1,+1,–,+5,Torso,+3,+21,"Armorer 2, Science! 1"
+T-45 Power Armor Upgrades,T-45d Arm,+2,+3,–,+3,Arm,+2,+15,"Armorer 2, Science! 1"
+T-45 Power Armor Upgrades,T-45d Leg,+2,+3,–,+3,Leg,+2,+15,"Armorer 2, Science! 1"
+T-45 Power Armor Upgrades,T-45e Helm,+1,+2,–,+3,Head,+2,+12,"Armorer 3, Science! 1"
+T-45 Power Armor Upgrades,T-45e Chest Piece,+1,+1,–,+7,Torso,+4,+28,"Armorer 3, Science! 1"
+T-45 Power Armor Upgrades,T-45e Arm,+3,+3,–,+3,Arm,+3,+20,"Armorer 3, Science! 1"
+T-45 Power Armor Upgrades,T-45e Leg,+3,+3,–,+3,Leg,+3,+20,"Armorer 3, Science! 1"
+T-45 Power Armor Upgrades,T-45f Helm,+2,+2,–,+4,Head,+3,+15,"Armorer 3, Science! 2"
+T-45 Power Armor Upgrades,T-45f Chest Piece,+1,+1,–,+8,Torso,+5,+35,"Armorer 3, Science! 2"
+T-45 Power Armor Upgrades,T-45f Arm,+3,+4,–,+4,Arm,+4,+25,"Armorer 3, Science! 2"
+T-45 Power Armor Upgrades,T-45f Leg,+3,+4,–,+4,Leg,+4,+25,"Armorer 3, Science! 2"
+T-51 Power Armor Upgrades,T-51b Helm,–,–,–,+1,Head,+1,+4,Armorer 1
+T-51 Power Armor Upgrades,T-51b Chest Piece,+1,–,–,+1,Torso,+1,+9,Armorer 1
+T-51 Power Armor Upgrades,T-51b Arm,–,–,–,+1,Arm,+1,+6,Armorer 1
+T-51 Power Armor Upgrades,T-51b Leg,–,–,–,+1,Leg,+1,+6,Armorer 1
+T-51 Power Armor Upgrades,T-51c Helm,–,+1,–,+1,Head,+1,+8,Armorer 2
+T-51 Power Armor Upgrades,T-51c Chest Piece,+1,+1,–,+3,Torso,+2,+18,Armorer 2
+T-51 Power Armor Upgrades,T-51c Arm,+1,+1,–,+1,Arm,+2,+13,Armorer 2
+T-51 Power Armor Upgrades,T-51c Leg,+1,+1,–,+1,Leg,+2,+13,Armorer 2
+T-51 Power Armor Upgrades,T-51d Helm,+1,+1,–,+2,Head,+2,+12,"Armorer 2, Science! 1"
+T-51 Power Armor Upgrades,T-51d Chest Piece,+1,+1,–,+4,Torso,+3,+27,"Armorer 2, Science! 1"
+T-51 Power Armor Upgrades,T-51d Arm,+1,+1,–,+2,Arm,+2,+19,"Armorer 2, Science! 1"
+T-51 Power Armor Upgrades,T-51d Leg,+1,+1,–,+2,Leg,+2,+19,"Armorer 2, Science! 1"
+T-51 Power Armor Upgrades,T-51e Helm,+1,+1,–,+3,Head,+2,+16,"Armorer 3, Science! 1"
+T-51 Power Armor Upgrades,T-51e Chest Piece,+2,+1,–,+6,Torso,+4,+36,"Armorer 3, Science! 1"
+T-51 Power Armor Upgrades,T-51e Arm,+1,+2,–,+3,Arm,+3,+26,"Armorer 3, Science! 1"
+T-51 Power Armor Upgrades,T-51e Leg,+1,+2,–,+3,Leg,+3,+26,"Armorer 3, Science! 1"
+T-51 Power Armor Upgrades,T-51f Helm,+1,+2,–,+3,Head,+3,+20,"Armorer 3, Science! 2"
+T-51 Power Armor Upgrades,T-51f Chest Piece,+2,+2,–,+7,Torso,+5,+45,"Armorer 3, Science! 2"
+T-51 Power Armor Upgrades,T-51f Arm,+2,+2,–,+3,Arm,+4,+32,"Armorer 3, Science! 2"
+T-51 Power Armor Upgrades,T-51f Leg,+2,+2,–,+3,Leg,+4,+32,"Armorer 3, Science! 2"
+T-60 Power Armor Upgrades,T-60b Helm,+1,+1,–,+1,Head,+1,+32,–
+T-60 Power Armor Upgrades,T-60b Chest Piece,–,–,–,+2,Torso,+1,+37,–
+T-60 Power Armor Upgrades,T-60b Arm,+1,+1,–,+1,Arm,+1,+35,–
+T-60 Power Armor Upgrades,T-60b Leg,+1,+1,–,+1,Leg,+1,+35,–
+T-60 Power Armor Upgrades,T-60c Helm,+1,+1,–,+2,Head,+3,+64,"Armorer 1, Science! 1"
+T-60 Power Armor Upgrades,T-60c Chest Piece,+1,–,–,+3,Torso,+2,+74,"Armorer 1, Science! 1"
+T-60 Power Armor Upgrades,T-60c Arm,+1,+1,–,+2,Arm,+2,+70,"Armorer 1, Science! 1"
+T-60 Power Armor Upgrades,T-60c Leg,+1,+1,–,+2,Leg,+2,+70,"Armorer 1, Science! 1"
+T-60 Power Armor Upgrades,T-60d Helm,+1,+2,–,+2,Head,+2,+96,"Armorer 2, Science! 1"
+T-60 Power Armor Upgrades,T-60d Chest Piece,+1,+1,–,+5,Torso,+3,+111,"Armorer 2, Science! 1"
+T-60 Power Armor Upgrades,T-60d Arm,+1,+2,–,+2,Arm,+2,+105,"Armorer 2, Science! 1"
+T-60 Power Armor Upgrades,T-60d Leg,+1,+2,–,+2,Leg,+2,+105,"Armorer 2, Science! 1"
+T-60 Power Armor Upgrades,T-60e Helm,+2,+2,–,+3,Head,+2,+128,"Armorer 3, Science! 1"
+T-60 Power Armor Upgrades,T-60e Chest Piece,+1,+1,–,+7,Torso,+4,+148,"Armorer 3, Science! 1"
+T-60 Power Armor Upgrades,T-60e Arm,+2,+2,–,+3,Arm,+3,+140,"Armorer 3, Science! 1"
+T-60 Power Armor Upgrades,T-60e Leg,+2,+2,–,+3,Leg,+3,+140,"Armorer 3, Science! 1"
+T-60 Power Armor Upgrades,T-60f Helm,+2,+3,–,+4,Head,+3,+160,"Armorer 3, Science! 2"
+T-60 Power Armor Upgrades,T-60f Chest Piece,+2,+1,–,+8,Torso,+5,+185,"Armorer 3, Science! 2"
+T-60 Power Armor Upgrades,T-60f Arm,+2,+3,–,+4,Arm,+4,+175,"Armorer 3, Science! 2"
+T-60 Power Armor Upgrades,T-60f Leg,+2,+3,–,+4,Leg,+4,+175,"Armorer 3, Science! 2"
+X-01 Power Armor Upgrades,Mk II Helm,–,–,–,+1,Head,+1,+7,–
+X-01 Power Armor Upgrades,Mk II Chest Piece,–,–,–,+1,Torso,+1,+14,–
+X-01 Power Armor Upgrades,Mk II Arm,+1,+1,–,–,Arm,+1,+10,–
+X-01 Power Armor Upgrades,Mk II Leg,+1,+1,–,–,Leg,+1,+10,–
+X-01 Power Armor Upgrades,Mk III Helm,+1,–,–,+1,Head,+1,+14,"Armorer 1, Science! 1"
+X-01 Power Armor Upgrades,Mk III Chest Piece,–,+1,–,+2,Torso,+2,+28,"Armorer 1, Science! 1"
+X-01 Power Armor Upgrades,Mk III Arm,+1,+1,–,+1,Arm,+2,+20,"Armorer 1, Science! 1"
+X-01 Power Armor Upgrades,Mk III Leg,+1,+1,–,+1,Leg,+2,+20,"Armorer 1, Science! 1"
+X-01 Power Armor Upgrades,Mk IV Helm,+1,+1,–,+2,Head,+2,+21,"Armorer 2, Science! 1"
+X-01 Power Armor Upgrades,Mk IV Chest Piece,+1,+1,–,+3,Torso,+3,+42,"Armorer 2, Science! 1"
+X-01 Power Armor Upgrades,Mk IV Arm,+1,+1,–,+2,Arm,+2,+30,"Armorer 2, Science! 1"
+X-01 Power Armor Upgrades,Mk IV Leg,+1,+1,–,+2,Leg,+2,+30,"Armorer 2, Science! 1"
+X-01 Power Armor Upgrades,Mk V Helm,+2,+1,–,+2,Head,+2,+28,"Armorer 3, Science! 1"
+X-01 Power Armor Upgrades,Mk V Chest Piece,+1,+2,–,+4,Torso,+4,+56,"Armorer 3, Science! 1"
+X-01 Power Armor Upgrades,Mk V Arm,+2,+2,–,+2,Arm,+3,+40,"Armorer 3, Science! 1"
+X-01 Power Armor Upgrades,Mk V Leg,+2,+2,–,+2,Leg,+3,+40,"Armorer 3, Science! 1"
+X-01 Power Armor Upgrades,Mk VI Helm,+2,+2,–,+3,Head,+3,+35,"Armorer 3, Science! 2"
+X-01 Power Armor Upgrades,Mk VI Chest Piece,+2,+2,–,+5,Torso,+5,+70,"Armorer 3, Science! 2"
+X-01 Power Armor Upgrades,Mk VI Arm,+2,+3,–,+4,Arm,+4,+50,"Armorer 3, Science! 2"
+X-01 Power Armor Upgrades,Mk VI Leg,+2,+3,–,+4,Leg,+4,+50,"Armorer 3, Science! 2"
+X-01 Power Armor Plating,EMP Shielding,–,+2,–,–,Any,+1,+20,Armorer 1

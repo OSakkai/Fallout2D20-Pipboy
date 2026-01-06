@@ -1,0 +1,23 @@
+ITEM,HP HEALED,OTHER EFFECTS,IRRADIATED?,WEIGHT,COST,RARITY
+Beer,0,Alcoholic,–,1,5,1
+Blood Pack,3,–,–,<1,10,2
+Bourbon,0,"Alcoholic, Reroll 1d20 on END tests",–,1,7,2
+Brahmin Milk,1,Heals '2 Radiation damage,–,<1,15,2
+Dirty Wastelander,0,"Alcoholic, Reduce difficulty of all STR tests by '1 and increase difficulty of all INT tests by '2 (in total)",–,1,10,3
+Dirty Water,2,–,1CD,<1,5,0
+Glowing Blood Pack,4,+5 to Radiation damage resistance,–,<1,30,3
+Irradiated Blood,3,Roll '2CD rather than '1 for determining Radiation damage when consumed,1CD,<1,50,2
+Melon Juice,3,Heal '1HP at the start of each turn,–,<1,6,2
+Moonshine,0,"Alcoholic, '+2 Max HP",–,<1,30,3
+Mutfruit Juice,3,Reroll 1d20 on all AGI tests,–,<1,8,2
+Nuka-Cherry,3,Immediately gain '+2 AP,1CD,1,40,3
+Nuka-Cola,2,Immediately gain '+1 AP,1CD,1,20,2
+Nuka-Cola Quantum,10,Immediately gain '+5 AP,1CD,1,50,5
+Purified Water,3,–,–,<1,20,1
+Refreshing Beverage,11,"Heals '10 Radiation damage, Cures all addictions",–,1,110,5
+Rum,0,"Alcoholic, Reroll 1d20 on AGI tests",–,1,8,2
+Tarberry Juice,3,Immediately gain '+6 AP,–,<1,5,4
+Tato Juice,3,Group AP pool can hold '1 AP more than normal,–,<1,7,3
+Vodka,2,Alcoholic,–,1,5,3
+Whiskey,0,"Alcoholic, Reroll up to two d20 on STR tests (in total)",–,1,5,3
+Wine,0,"Alcoholic, Immediately gain '+1 AP",–,1,5,3

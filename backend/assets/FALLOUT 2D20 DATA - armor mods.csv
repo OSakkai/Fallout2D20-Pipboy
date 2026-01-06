@@ -1,0 +1,16 @@
+TYPE,MOD,DR (PHYSICAL),DR (ENERGY),DR (RADIATION),EFFECTS,WEIGHT,COST,PERKS
+ALL LOCATIONS,Laminated,+1,+1,–,–,+1,+5,–
+ALL LOCATIONS,Resin,+2,+2,–,–,+1,+10,Armorer 1
+ALL LOCATIONS,Microcarbon,+3,+3,–,–,+2,+15,Armorer 1
+TORSO ONLY ,Padded,–,–,–,+2 to all damage resistances vs Blast weapons,+4,+1,–
+TORSO ONLY ,Asbestos Lining,–,+3,–,Ignore Energy damage from the Persistent damage effect,+4,+3,Armorer 1
+TORSO ONLY ,Dense,–,–,–,+4 to all Damage Resistances vs Blast weapons,+4,+7,Armorer 3
+TORSO ONLY ,BioCommMesh,–,–,–,Chems last twice as long (see p.164),+2,+9,"Armorer 4, Science! 2"
+TORSO ONLY ,Pneumatic,–,–,–,Stun damage effect requires 2+ Effects to be rolled to affect you,+2,+9,Armorer 4
+ARMS ONLY ,Brawling,–,–,–,Unarmed attacks inflict '+1CD damage,+1,+1,Armorer 1
+ARMS ONLY ,Braced,–,–,–,+2 to all damage resistances vs melee attacks,+1,+1,Armorer 1
+ARMS ONLY ,Stabilized,–,–,–,"When you aim and make a ranged attack, '+1CD to the attack's damage",+1,+1,Armorer 2
+ARMS ONLY ,Aerodynamic,–,–,–,May spend up to 4 AP on bonus damage for melee attacks,–,+1,Armorer 3
+ARMS ONLY ,Weighted,–,–,–,Melee and Unarmed attacks gain Piercing 1,+1,+3,Armorer 4
+LEGS ONLY ,Cushioned,–,–,–,+2 to Physical damage resistance vs falling damage,–,+1,Armorer 1
+LEGS ONLY ,Muffled,–,–,–,Re-roll 1d20 on Stealth tests,–,+2,Armorer 2

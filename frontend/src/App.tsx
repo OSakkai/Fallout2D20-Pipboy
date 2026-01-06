@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { PipBoy } from './components/PipBoy/PipBoy';
-import { LoginScreen, MainMenu } from './components/Terminal';
+import { LoginScreen, MainMenu, Encyclopedia } from './components/Terminal';
 
-type AppScreen = 'login' | 'mainMenu' | 'pipboy';
+type AppScreen = 'login' | 'mainMenu' | 'pipboy' | 'encyclopedia';
 
 interface UserData {
   email: string;
@@ -133,6 +133,14 @@ function App() {
     setCurrentScreen('pipboy');
   };
 
+  const handleNavigateToEncyclopedia = () => {
+    setCurrentScreen('encyclopedia');
+  };
+
+  const handleBackToMainMenu = () => {
+    setCurrentScreen('mainMenu');
+  };
+
   // Renderiza a tela apropriada
   if (currentScreen === 'login') {
     return (
@@ -152,11 +160,16 @@ function App() {
         onSettings={handleSettings}
         onExit={handleExit}
         onNavigateToPipboy={handleNavigateToPipboy}
+        onNavigateToEncyclopedia={handleNavigateToEncyclopedia}
         userEmail={userData?.email}
         userName={userData?.username}
         isGuest={userData?.isGuest}
       />
     );
+  }
+
+  if (currentScreen === 'encyclopedia') {
+    return <Encyclopedia onBack={handleBackToMainMenu} />;
   }
 
   // Futuramente: tela do Pip-Boy

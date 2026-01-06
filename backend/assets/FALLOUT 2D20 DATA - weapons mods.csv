@@ -1,0 +1,149 @@
+WEAPON TYPE,MOD,SECTION,NAME PREFIX,EFFECTS,WEIGHT,COST,PERKS
+Small Guns,Hardened,RECEIVER MODS,Hardened,+1CD damage,–,+20,–
+Small Guns,Powerful,RECEIVER MODS,Powerful,+2CD damage,+1,+25,Gun Nut 1
+Small Guns,Advanced,RECEIVER MODS,Advanced,"+3CD damage, +1 Fire Rate",+2,+35,Gun Nut 2
+Small Guns,Calibrated,RECEIVER MODS,Calibrated,Gain Vicious,–,+25,–
+Small Guns,Automatic,RECEIVER MODS,Auto,"-1CD damage, +2 Fire Rate, Gain Burst, Gain Inaccurate",+1,+30,Gun Nut 1
+Small Guns,Hair Trigger,RECEIVER MODS,Hair Trigger,+1 Fire Rate,–,+20,Gun Nut 2
+Small Guns,.38 Receiver,RECEIVER MODS,.38,"Change Damage to 4CD, Ammo changes to .38",+3,+20,Gun Nut 4
+Small Guns,.308 Receiver,RECEIVER MODS,.308,"Change damage to 7CD, Ammo changes to .308",+4,+40,Gun Nut 4
+Small Guns,.45 Receiver,RECEIVER MODS,.45,"Change damage to 4CD, +1 Fire Rate, Ammo changes to .45",+2,+19,Gun Nut 2
+Small Guns,.50 Receiver,RECEIVER MODS,.50,"Change damage to 8CD, Gain Vicious, Ammo changes to .50",+4,+30,Gun Nut 4
+Small Guns,Automatic Piston,RECEIVER MODS,Automatic,"+2 Fire Rate, Reduce Range by 1 step",+2,+75,Gun Nut 2
+Small Guns,Snubnose,BARREL MODS,Snub-noses,Gain Inaccurate,-1,–,–
+Small Guns,Bull Barrel,BARREL MODS,Bull Barrel,Gain Reliable,–,+10,Gun Nut 3
+Small Guns,Long,BARREL MODS,Long,Increase Range by 1 step,+1,+20,Gun Nut 1
+Small Guns,Ported,BARREL MODS,Ported,"Increase Range by 1 step, +1 Fire Rate",+1,+35,Gun Nut 4
+Small Guns,Vented,BARREL MODS,Vented,"Increase Range by 1 step, +1 Fire Rate, Gain Reliable",+1,+36,Gun Nut 4
+Small Guns,Sawed-Off,BARREL MODS,Sawed Off,"Remove Two-Handed, Gain Close Quarters",-2,+3,–
+Small Guns,Shielded Barrel,BARREL MODS,Shielded,+1CD damage,–,+37,"Gun Nut 3, Repair"
+Small Guns,Finned,BARREL MODS,Finned,"+1CD damage, Increase Range by 1 step",+2,+15,Gun Nut 2
+Small Guns,Large Magazine,MAGAZINE MODS,High Capacity,"+1 Fire Rate, Unreliable",+1,-3,Gun Nut 2
+Small Guns,Quick-Eject Mag,MAGAZINE MODS,Quick,Gain Reliable,–,+8,Gun Nut 1
+Small Guns,Large Quick-Eject Mag,MAGAZINE MODS,Quick high capacity,+1 Fire Rate,+1,+23,Gun Nut 2
+Small Guns,Comfort Grip,GRIP MODS,Comfort,Remove Inaccurate,–,+6,–
+Small Guns,Sharpshooter's Grip,GRIP MODS,Sharpshooter's,"Remove Inaccurate, Add Piercing 1",–,+10,Gun Nut 1
+Small Guns,Full Stock,STOCK MODS,–,"Gain Two-Handed, Remove Inaccurate",+1,+10,–
+Small Guns,Marksman's Stock,STOCK MODS,Marksman's,"Gain Two-Handed, Remove Inaccurate, Gain Accurate",+2,+20,Gun Nut 2
+Small Guns,Recoil Compensating Stock,STOCK MODS,Recoil Compensated,"Gain Two-Handed, Remove Inaccurate, +1 Fire Rate",+2,+3,Gun Nut 3
+Small Guns,Reflex Sight,SIGHT MODS,Tactical,May re-roll hit location die,–,+14,–
+Small Guns,Short Scope,SIGHT MODS,Scoped,Gain Accurate,+1,+11,–
+Small Guns,Long Scope,SIGHT MODS,Scoped,"Gain Accurate, Increase Range by 1 step",+1,+29,Science! 2
+Small Guns,Short Night Vision Scope,SIGHT MODS,Night Vision,"Gain Accurate, Gain Night Vision",+1,+38,Science! 2
+Small Guns,Long Night Vision Scope,SIGHT MODS,Night Vision,"Gain Accurate, Gain Night Vision, Increase Range by 1 step",+1,+50,Science! 3
+Small Guns,Recon Scope,SIGHT MODS,Recon,"Gain Accurate, Gain Recon",+1,+59,Science! 3
+Small Guns,Bayonet,MUZZLE MODS,Bayoneted,"Melee weapon, deals 4CD Piercing 1 physical damage",+2,+10,–
+Small Guns,Compensator,MUZZLE MODS,Compensated,Remove Inaccurate,+1,+15,Gun Nut 1
+Small Guns,Muzzle Break,MUZZLE MODS,Muzzled,"Remove Inaccurate, +1 Fire Rate",+1,+30,Gun Nut 1
+Small Guns,Suppressor,MUZZLE MODS,Suppressed,Gain Suppressed,+2,+45,Gun Nut 2
+Energy Weapons,Beta Wave Tuner,CAPACITOR,Incendiary,Gain Persistent,–,+30,–
+Energy Weapons,Boosted Capacitor,CAPACITOR,Boosted,"+1CD, -1 Fire Rate",–,+35,–
+Energy Weapons,Photon Exciter,CAPACITOR,Excited,Gain Vicious,–,+30,Science! 1
+Energy Weapons,Photon Agitator,CAPACITOR,Agitated,"+1CD, Gain Vicious",+1,+35,Science! 2
+Energy Weapons,Bracketed Short Barrel,BARREL,–,Allows the weapon to take a Muzzle mod,–,+6,–
+Energy Weapons,Long Barrel,BARREL,Long,"Remove Close-Quarters, Increase Range by 1 step",+2,+20,–
+Energy Weapons,Splitter,BARREL,Scattergun,"-1CD, Gain Spread, Gain Inaccurate",+1,+31,–
+Energy Weapons,Automatic Barrel,BARREL,Automatic,"-1CD, Remove Close-Quarters, Increase Range by 1 step, +1 Fire Rate",+1,+24,Science! 1
+Energy Weapons,Bracketed Long Barrel,BARREL,–,"Remove Close Quarters, Increase Range by 1 step, Allows the weapon to take a Muzzle mod",+2,+25,Science! 1
+Energy Weapons,Improved Barrel,BARREL,Improved,"+1CD, Remove Close Quarters, Increase Range by 1 step, -1 Fire Rate",+1,+26,Science! 1
+Energy Weapons,Sniper Barrel,BARREL,Sniper,"+2CD, Remove Close Quarters, Increase Range by 1 step, -1 Fire Rate",+2,+30,Science! 1
+Energy Weapons,Flamer Barrel,BARREL,Thrower,"-2CD, +2 Fire Rate, Gain Burst, Gain Spread, Reduce range by 1 step, Gain Inaccurate",+1,+35,Science! 2
+Energy Weapons,Sharpshooter's Grip,GRIP,Sharpshooter's,"Remove Inaccurate, Add Piercing 1",–,+10,Gun Nut 1
+Energy Weapons,Standard Stock,STOCK,–,"Gain Two-Handed, Remove Inaccurate, Remove Close Quarters",+1,+10,–
+Energy Weapons,Full Stock,STOCK,–,"Gain Piercing 1, Remove Close Quarters",+1,+15,–
+Energy Weapons,Marksman's Stock,STOCK,Marksman's,"Gain Two-Handed, Remove Inaccurate, Gain Accurate, Remove Close Quarters",+2,+20,Gun Nut 2
+Energy Weapons,Recoil Compensating Stock,STOCK,Recoil Compensated,"Gain Two-Handed, Remove Inaccurate, +1 Fire Rate, Remove Close Quarters",+2,+3,Gun Nut 3
+Energy Weapons,Reflex Sight,SIGHT,Tactical,May re-roll hit location die,–,+14,–
+Energy Weapons,Short Scope,SIGHT,Scoped,Gain Accurate,+1,+11,–
+Energy Weapons,Long Scope,SIGHT,Scoped,"Gain Accurate, Increase Range by 1 step",+1,+29,Science! 2
+Energy Weapons,Short Night Vision Scope,SIGHT,Night Vision,"Gain Accurate, Gain Night Vision",+1,+38,Science! 2
+Energy Weapons,Long Night Vision Scope,SIGHT,Night Vision,"Gain Accurate, Gain Night Vision, Increase Range by 1 step",+1,+50,Science! 3
+Energy Weapons,Recon Scope,SIGHT,Recon,"Gain Accurate, Gain Recon",+1,+59,Science! 3
+Energy Weapons,Beam Splitter,MUZZLE,Scattered,"-1CD, Gain Spread, -1 Fire Rate, Gain Inaccurate, Reduce Range by 1 step",+1,+15,Science! 1
+Energy Weapons,Beam Focuser,MUZZLE,Focused,Increase Range by 1 Step,+1,+20,Science! 1
+Energy Weapons,Gyro Compensating Lens,MUZZLE,Targeting,"+1 Fire Rate, Remove Inaccurate",+1,+25,Science! 1
+Energy Weapons,Three-crank capacitor,CAPACITOR,Three-crank,"+1CD, consumes 3 shots per attack",–,+4,–
+Energy Weapons,Four-crank capacitor,CAPACITOR,Four-crank,"+2CD, consumes 4 shots per attack",+1,+8,Science! 1
+Energy Weapons,Five-crank capacitor,CAPACITOR,Five-crank,"+3CD, consumes 5 shots per attack",+1,+12,Science! 2
+Energy Weapons,Six-crank capacitor,CAPACITOR,Six-crank,"+4CD, consumes 6 shots per attack",+2,+16,Science! 3
+Energy Weapons,Deep Dish,DISH,Long,"+1CD, Increase Range by 1 step",+2,+72,Science! 4
+Energy Weapons,Electric Signal,MUZZLE,–,Change damage to 7CD,–,+30,Science! 3
+Energy Weapons,Carrier Antennae,MUZZLE,Electrified,"Change damage type to Energy, Gain Radioactive",–,+60,Science! 4
+Energy Weapons,Signal Repeater,MUZZLE,Automatic,"+2 Fire Rate, Gain Burst, Remove Blast",–,+60,Science! 4
+Big Guns,Napalm,FUEL,Napalmer,+1CD,+7,+59,–
+Big Guns,Long Barrel,BARREL,Long,Remove Inaccurate,2,+28,–
+Big Guns,Large Tank,PROPELLANT TANK,High Capacity,+1 Fire Rate,+3,28,–
+Big Guns,Huge Tank,PROPELLANT TANK,Max. Capacity,+2 Fire Rate,+6,34,–
+Big Guns,Compression Nozzle,NOZZLE,Compressed,+1CD,–,+22,–
+Big Guns,Vaporization Nozzle,NOZZLE,Vaporizing,"+1CD, Vicious",–,+47,–
+Big Guns,Photon Exciter,CAPACITOR,Excited,Gain Vicious,+1,+19,Science! 3
+Big Guns,Beta Wave Tuner,CAPACITOR,Incendiary,Gain Persistent,+1,+57,–
+Big Guns,Boosted Capacitor,CAPACITOR,Boosted,+1CD,+1,+94,–
+Big Guns,Photon Agitator,CAPACITOR,Agitated,"+1CD, Gain Vicious",+3,+132,Science! 3
+Big Guns,Charging barrels,BARREL,Charging,"+4CD, -3 Fire Rate, Increase Range by 1 step",+10,+357,Science! 4
+Big Guns,Reflex Sight,SIGHT,Tactical,Remove Inaccurate,+1,+169,Science! 4
+Big Guns,Beam Focuser,NOZZLE,Focused,"Gain Piercing 1, Increase Range by 1 step",–,+22,–
+Big Guns,Long Barrel,BARREL,Long,Increase Range by 1 step,+2,+20,Gun Nut 1
+Big Guns,Recoil Compensating Stock,STOCK,Recoil Compensated,+1 Fire Rate,+2,+40,–
+Big Guns,Gunner Sight,SIGHT,Tactical,May re-roll hit location die,+1,+5,–
+Big Guns,Electrification Module,MUZZLE,Electrified,"Gain Vicious, Change damage type to Energy",+1,+70,"Gun Nut 2, Science! 1"
+Big Guns,Ignition Module,MUZZLE,Flaming,Gain Persistent (Energy),+1,+130,"Gun Nut 3, Science! 1"
+Big Guns,Accelerated Barrel,BARREL,High-Speed,"+1CD, +1 Fire Rate, Reduce Range by 1 step",+5,+45,Gun Nut 3
+Big Guns,Tri-Barrel,BARREL,High-Powered,"+2CD, -2 Fire Rate",+3,+75,Gun Nut 4
+Big Guns,Gunner Sight,SIGHT,Tactical,Remove Inaccurate,+1,+68,–
+Big Guns,Shredder,MUZZLE,Bayoneted Shredding,"Melee weapon, Deals CD of Physical damage equal to Fire Rate",+5,+5,Gun Nut 2
+Big Guns,Triple Barrel,BARREL,Triple Barrel,+1 Fire Rate,+16,+143,Gun Nut 2
+Big Guns,Quad Barrel,BARREL,Quad Barrel,+2 Fire Rate,+20,+218,Gun Nut 3
+Big Guns,Scope,SIGHT,Scoped,Gain Accurate,+6,+143,Gun Nut 2
+Big Guns,Night Vision Scope,SIGHT,Night-vision,"Gain Accurate, Gain Night Vision",+6,+248,"Gun Nut 4, Science! 1"
+Big Guns,Targeting Computer,SIGHT,Targeting,"When you Aim at a target, the target does not benefit from being in cover, and the bonus for aiming applies to the next attack on any subsequent turn during the scene",+7,+293,"Gun Nut 2, Science! 2"
+Big Guns,Bayonet,MUZZLE,Bayoneted Shredding,"Melee weapon, deals 4CD Piercing 1 physical damage",+1,+30,–
+Big Guns,Stabilizer,MUZZLE,Muzzled,Gain Piercing 1,+2,+60,Gun Nut 2
+Melee,Serrated Blade (Sword),MELEE,Serrated,Gain Persistent,–,+25,Blacksmith 2
+Melee,Electrified Blade (Sword),MELEE,Electrified,"+1CD, Damage type becomes Energy",–,+50,"Blacksmith 2, Science! 1"
+Melee,Electrified Serrated Blade (Sword),MELEE,Electrified Serrated,"+1CD, Damage type becomes Energy, gain Persistent (Physical)",–,+75,"Blacksmith 3, Science! 1"
+Melee,Stun Pack (Sword),MELEE,Stunning,"+2CD, Damage type becomes Energy, gain Stun",–,+100,"Blacksmith 3, Science! 1"
+Melee,Serrated Blade (Combat Knife),MELEE,Serrated,"+1CD, Gain Persistent",–,+12,Blacksmith 1
+Melee,Stealth Blade (Combat Knife),MELEE,Stealth,"+1CD, Gain Persistent, '+2CD on Sneak Attacks",–,+18,Blacksmith 2
+Melee,Serrated Blade (Machete),MELEE,Serrated,"+2CD, Gain Persistent",–,+12,Blacksmith 2
+Melee,Curved Blade (Ripper),MELEE,Curved,"+1CD, On successful attack, spend 2 AP to disarm opponent, knocking one held weapon away",+1,+15,–
+Melee,Extended Blade (Ripper),MELEE,Extended,"+1CD, Gain Persistent",+3,+25,Blacksmith 3
+Melee,Extra Flame Jets (Shishkebab),MELEE,Searing,"+1CD, Gain Persistent",+1,+100,Blacksmith 3
+Melee,Serrated Blade (Switchblade),MELEE,Serrated,"+1CD, Gain Persistent",–,+10,Blacksmith 1
+Melee,Barbed (Baseball Bat),MELEE,Barbed,Gain Piercing 1,–,+5,–
+Melee,Spiked (Baseball Bat),MELEE,Spiked,"+1CD, Gain Piercing 1",+1,+7,–
+Melee,Sharp (Baseball Bat),MELEE,Sharp,"+1CD, Gain Persistent",+1,+7,–
+Melee,Chain-Wrapped (Baseball Bat),MELEE,Chain-Wrapped,+2CD,+1,+10,Blacksmith 1
+Melee,Bladed (Baseball Bat),MELEE,Bladed,"+2CD, Gain Persistent",+2,+12,Blacksmith 2
+Melee,Spiked (Board),MELEE,Spiked,"+1CD, Gain Piercing 1",+1,+6,–
+Melee,Puncturing (Board),MELEE,Puncturing,+2CD,+1,+9,Blacksmith 1
+Melee,Bladed (Board),MELEE,Bladed,"+2CD, Gain Persistent",+2,+10,Blacksmith 1
+Melee,Spiked (Lead Pipe),MELEE,Spiked,"+1CD, Gain Piercing 1",+1,+4,–
+Melee,Heavy (Lead Pipe),MELEE,Heavy,+2CD,+2,+11,Blacksmith 2
+Melee,Hooked (Pipe Wrench),MELEE,Hooked,"+1CD, On successful attack, spend 2 AP to disarm opponent, knocking one held weapon away",–,+9,–
+Melee,Heavy (Pipe Wrench),MELEE,Weighted,+2CD,+7,+12,Blacksmith 1
+Melee,Puncturing (Pipe Wrench),MELEE,Puncturing,"+2CD, Gain Piercing 1",+1,+13,Blacksmith 1
+Melee,Extra Heavy (Pipe Wrench),MELEE,Heavy,+3CD,+2,+22,Blacksmith 2
+Melee,Barbed (Pool Cue),MELEE,Barbed,"+1CD, Gain Piercing 1",–,+2,–
+Melee,Sharp (Pool Cue),MELEE,Sharp,"+1CD, Gain Persistent",–,+3,–
+Melee,Spiked (Rolling Pin),MELEE,Barbed,"+1CD, Gain Piercing 1",–,+3,–
+Melee,Sharp (Rolling Pin),MELEE,Sharp,"+1CD, Gain Persistent",–,+3,–
+Melee,Electrified (Baton),MELEE,Shock,"+2CD, Change Damage Type to Energy",–,+15,"Blacksmith 2, Science! 1"
+Melee,Stun Pack (Baton),MELEE,Stun,"+3CD, Gain Stun, Change Damage Type to Energy",–,+30,"Blacksmith 2, Science! 1"
+Melee,Puncturing (Sledgehammer),MELEE,Puncturing,"+1CD, Gain Piercing 1",+5,+18,Blacksmith 2
+Melee,Heavy (Sledgehammer),MELEE,Heavy,+2CD,+9,+30,Blacksmith 2
+Melee,Heating Coil (Super Sledge),MELEE,Heated,"+1CD, Change Damage Type to Energy",–,+180,Blacksmith 2
+Melee,Stun Pack (Super Sledge),MELEE,Stunning,"+2CD, Gain Stun, Change Damage Type to Energy",–,+360,"Blacksmith 3, Science! 1"
+Melee,Bladed (Tire iron),MELEE,Bladed,"+1CD, Gain Persistent",+1,+12,Blacksmith 2
+Melee,Barbed (Walking Cane),MELEE,Barbed,"+1CD, Gain Piercing 1",–,+3,–
+Melee,Spiked (Walking Cane),MELEE,Spiked,"+1CD, Gain Piercing 1",–,+3,–
+Unarmed,Spiked (Boxing Glove),MELEE,Spiked,Gain Piercing 1,–,+3,–
+Unarmed,Puncturing (Boxing Glove),MELEE,Puncturing,"+1CD, Piercing 1",–,+4,Blacksmith 1
+Unarmed,Lead lining (Boxing Glove),MELEE,Lead-lined,+2CD,+1,+7,Blacksmith 1
+Unarmed,Extra Claw (Deathclaw Gauntlet),MELEE,Large,"+1CD, On successful attack, spend 2 AP to disarm opponent, knocking one held weapon away",+2,+22,–
+Unarmed,Sharp (Knuckles),MELEE,Sharp,Gain Persistent,–,+3,–
+Unarmed,Spiked (Knuckles),MELEE,Spiked,Gain Piercing 1,–,+3,–
+Unarmed,Puncturing (Knuckles),MELEE,Puncturing,"+1CD, Gain Piercing 1",–,+4,Blacksmith 1
+Unarmed,Bladed (Knuckles),MELEE,Bladed,"+1CD, Gain Persistent",–,+5,Blacksmith 1
+Unarmed,Puncturing (Power Fist),MELEE,Puncturing,"+2CD, Gain Piercing 1",+1,+45,Blacksmith 2
+Unarmed,Heating Coil (Power Fist),MELEE,Heated,"+2CD, Change Damage Type to Energy",–,+100,Blacksmith 3

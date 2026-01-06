@@ -1,0 +1,29 @@
+TYPE,MOD,EFFECTS,LOCATION,WEIGHT,COST,PERKS
+SYSTEM MODS,Rad Scrubber,Ignore radiation from irradiated food or drink consumed while armor is powered,Head,+1,+100,Science! 2
+SYSTEM MODS,Sensor Array,Re-roll 1d20 on all PER tests while armor is powered,Head,+1,+100,Science! 3
+SYSTEM MODS,Targeting HUD,"When you take the Aim minor action, you may take a second minor action for 0 AP while armor is powered",Head,+1,+100,Science! 3
+SYSTEM MODS,Internal Database,Re-roll 1d20 on all INT tests while armor is powered,Head,+1,+100,Science! 2
+SYSTEM MODS,Welded Rebar (Raider only),Enemies who attack you with a melee or unarmed attack and suffer a complication suffer '2CD damage,Torso,+2,+25,Armorer 1
+SYSTEM MODS,Core Assembly,"While armor is powered, if you begin your turn and there is no AP in the group pool, add '+1 AP",Torso,+2,+100,Science! 3
+SYSTEM MODS,Blood Cleanser,Re-roll addiction roll for addictive chems while armor is powered,Torso,+2,+100,Science! 1
+SYSTEM MODS,Emergency Protocols,"While armor is powered, if your current HP is below 1/4 of your maximum, add '+1 to Defense and '+3 to all damage resistances",Torso,+2,+100,Science! 4
+SYSTEM MODS,Motion-Assist Servos,Increase STR of armor frame to '13 while armor is powered,Torso,+2,+100,Science! 3
+SYSTEM MODS,Kinetic Dynamo,"While armor is powered, when you suffer any damage (after reductions for damage resistances), add '+1 to the group AP pool",Torso,+2,+100,Science! 4
+SYSTEM MODS,Medic Pump,"While armor is powered, when your HP are reduced to below 1/2 of your maximum, you immediately use a Stimpak, regaining '3 HP or treating one injury",Torso,+2,+100,Science! 4
+SYSTEM MODS,Reactive Plates,"While armor is powered, when you suffer damage from a melee or unarmed attack, you inflict Physical damage back to the attacker equal to half the damage total rolled",Torso,+2,+100,Armorer 4
+SYSTEM MODS,Tesla Coils,"While armor is powered, whenever an enemy makes a melee attack against you, they suffer '4CD Energy damage",Torso,+2,+100,Science! 3
+SYSTEM MODS,Stealth Boy,You may activate a Stealth Boy (p.171) once per scene by spending '1 charge,Torso,+1,+100,Science! 4
+SYSTEM MODS,Jetpack,When you move you may activate a jetpack by spending '1 charge; this allows you to move one additional zone (horizontally or vertically) or gain enough height for an impact landing,Torso,+1,+500,"Armorer 4, Science! 4"
+SYSTEM MODS,Rusty Knuckles,Your unarmed attacks gain the Persistent damage effect,Arm,+1,+50,Blacksmith 1
+SYSTEM MODS,Hydraulic Bracers,"While armor is powered, your unarmed attacks inflict '+2CD damage",Arm,+1,+100,Blacksmith 3
+SYSTEM MODS,Optimized Bracers,"While armor is powered, you may spend up to '4 AP on bonus damage for melee attacks",Arm,+1,+100,Blacksmith 1
+SYSTEM MODS,Tesla Bracers,"While armor is powered, your unarmed attacks inflict '+2CD damage and now inflict Energy damage",Arm,+1,+150,"Blacksmith 3, Science! 1"
+SYSTEM MODS,Calibrated Shocks,Your carry weight is increased by '+50,Leg,+1,+100,Science! 2
+SYSTEM MODS,Explosive Vent,"While the armor is powered, when you land from a height, you inflict '4CD damage to all creatures and damageable objects within Close range",Leg,+1,+100,Science! 3
+SYSTEM MODS,Overdrive Servos,"While armor is powered, when you Sprint, you may spend '+2 AP to move one additional zone",Leg,+1,+100,Science! 3
+PLATING MODS,Titanium Plating,+1 HP to Armor Piece ('+2 to Torso),Any,1,10,Armorer 3
+PLATING MODS,Lead Plating,+2 Radiation damage resistance,Any,2,10,Armorer 1
+PLATING MODS,Photovoltaic Plating,+1 AP at the start of a scene if in direct sunlight (only applies once),Any,1,10,Science! 3
+PLATING MODS,Winterized Coating (not on X-01),+1 Energy damage resistance,Any,1,10,Armorer 1
+PLATING MODS,Prism Shielding,+3 Energy damage resistance,Any,2,10,Science! 2
+PLATING MODS,Explosive Shielding,+2 to all damage resistances vs Blast weapons,Any,1,10,Science! 1

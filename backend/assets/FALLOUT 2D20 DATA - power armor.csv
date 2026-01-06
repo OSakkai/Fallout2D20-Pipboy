@@ -1,0 +1,23 @@
+TYPE,ARMOR-PIECE,DR (PHYSICAL),DR (ENERGY),DR (RADIATION),HEALTH-POINTS,LOCATIONS-COVERED,WEIGHT,COST,RARITY
+,,,,,,,,,
+Power Armor Frame,Armor Frame,–,–,–,–,All,4500,150,4
+Raider Power Armor,Raider Helm,6,4,7,7,Head,50,14,2
+Raider Power Armor,Raider Chest Piece,8,6,9,10,Torso,100,22,2
+Raider Power Armor,Raider Arm,4,3,7,7,Arm,75,16,2
+Raider Power Armor,Raider Leg,4,3,7,7,Leg,75,17,2
+T-45 Power Armor,T-45 Helm,6,4,7,7,Head,60,12,2
+T-45 Power Armor,T-45 Chest Piece,8,7,9,14,Torso,140,20,2
+T-45 Power Armor,T-45 Arm,4,3,7,7,Arm,100,15,2
+T-45 Power Armor,T-45 Leg,4,3,7,7,Leg,100,15,2
+T-51 Power Armor,T-51 Helm,6,5,7,9,Head,80,12,3
+T-51 Power Armor,T-51 Chest Piece,8,7,9,18,Torso,180,20,3
+T-51 Power Armor,T-51 Arm,5,4,7,9,Arm,130,15,3
+T-51 Power Armor,T-51 Leg,5,4,7,9,Leg,10,15,3
+T-60 Power Armor,T-60 Helm,7,6,7,10,Head,650,12,4
+T-60 Power Armor,T-60 Chest Piece,9,8,9,21,Torso,750,20,4
+T-60 Power Armor,T-60 Arm,6,5,7,10,Arm,700,15,4
+T-60 Power Armor,T-60 Leg,6,5,7,10,Leg,700,15,4
+X-01 Power Armor,X-01 Helm,8,7,7,12,Head,60,12,5
+X-01 Power Armor,X-01 Chest Piece,10,8,9,24,Torso,140,20,5
+X-01 Power Armor,X-01 Arm,7,6,7,12,Arm,100,15,5
+X-01 Power Armor,X-01 Leg,7,6,7,12,Leg,100,15,5

@@ -1,0 +1,644 @@
+// Fallout 2d20 Database Schema
+// PostgreSQL + Prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================================
+// USER & CAMPAIGN MANAGEMENT
+// ============================================================================
+
+model User {
+  id            String      @id @default(cuid())
+  email         String      @unique
+  name          String
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  
+  campaigns     Campaign[]
+  characters    Character[]
+  
+  @@map("users")
+}
+
+model Campaign {
+  id            String      @id @default(cuid())
+  name          String
+  description   String?
+  gmId          String
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  
+  gm            User        @relation(fields: [gmId], references: [id], onDelete: Cascade)
+  characters    Character[]
+  npcs          Npc[]
+  sessions      Session[]
+  
+  @@index([gmId])
+  @@map("campaigns")
+}
+
+model Session {
+  id            String      @id @default(cuid())
+  campaignId    String
+  sessionNumber Int
+  date          DateTime    @default(now())
+  notes         String?
+  
+  campaign      Campaign    @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  sessionStates SessionState[]
+  
+  @@unique([campaignId, sessionNumber])
+  @@index([campaignId])
+  @@map("sessions")
+}
+
+// Tracking de AP e Luck Points por sessão
+model SessionState {
+  id            String      @id @default(cuid())
+  sessionId     String
+  characterId   String
+  currentAP     Int         @default(0)
+  currentLuck   Int         @default(0)
+  
+  session       Session     @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  character     Character   @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  
+  @@unique([sessionId, characterId])
+  @@index([sessionId])
+  @@index([characterId])
+  @@map("session_states")
+}
+
+// ============================================================================
+// CHARACTERS (PLAYER CHARACTERS)
+// ============================================================================
+
+model Character {
+  id            String      @id @default(cuid())
+  userId        String
+  campaignId    String
+  name          String
+  level         Int         @default(1)
+  xpEarned      Int         @default(0)
+  xpToNext      Int         @default(100)
+  origin        Origin
+  characterType CharacterType @default(NORMAL)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  
+  // Relations
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  campaign      Campaign    @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  
+  // Character components
+  attributes    CharacterAttributes?
+  skills        CharacterSkill[]
+  derivedStats  DerivedStats?
+  bodyLocations BodyLocation[]
+  perks         CharacterPerk[]
+  inventory     InventoryItem[]
+  activeEffects ActiveEffect[]
+  sessionStates SessionState[]
+  
+  @@index([userId])
+  @@index([campaignId])
+  @@map("characters")
+}
+
+// S.P.E.C.I.A.L Attributes
+model CharacterAttributes {
+  id            String      @id @default(cuid())
+  characterId   String      @unique
+  
+  strength      Int         @default(5) // 4-10+
+  perception    Int         @default(5) // 4-10+
+  endurance     Int         @default(5) // 4-10+
+  charisma      Int         @default(5) // 4-10+
+  intelligence  Int         @default(5) // 4-10+
+  agility       Int         @default(5) // 4-10+
+  luck          Int         @default(5) // 4-10+
+  
+  character     Character   @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  
+  @@map("character_attributes")
+}
+
+// Skills (17 skills do Fallout)
+model CharacterSkill {
+  id            String      @id @default(cuid())
+  characterId   String
+  skill         Skill
+  rank          Int         @default(0) // 0-6
+  isTagged      Boolean     @default(false)
+  
+  character     Character   @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  
+  @@unique([characterId, skill])
+  @@index([characterId])
+  @@map("character_skills")
+}
+
+// Derived Statistics (calculadas on-demand mas cached aqui)
+model DerivedStats {
+  id            String      @id @default(cuid())
+  characterId   String      @unique
+  
+  defense       Int         @default(0)
+  initiative    Int         @default(0)
+  meleeDamage   Int         @default(0) // Bonus CD
+  maxHP         Int
+  currentHP     Int
+  carryWeightMax Int
+  carryWeightCurrent Int   @default(0)
+  maxLuckPoints Int
+  
+  // Poison DR (não varia por location)
+  poisonDR      Int         @default(0)
+  
+  character     Character   @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  
+  @@map("derived_stats")
+}
+
+// Body Locations (6 para humanos, variável para robôs)
+model BodyLocation {
+  id            String      @id @default(cuid())
+  characterId   String
+  location      BodyLocationEnum
+  diceRange     String      // "1-2", "3-8", etc
+  
+  maxHP         Int
+  currentHP     Int
+  physicalDR    Int         @default(0)
+  energyDR      Int         @default(0)
+  radiationDR   Int         @default(0)
+  
+  character     Character   @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  
+  @@unique([characterId, location])
+  @@index([characterId])
+  @@map("body_locations")
+}
+
+// Perks com histórico de quando foram adquiridos
+model CharacterPerk {
+  id            String      @id @default(cuid())
+  characterId   String
+  perkId        String      // FK para PerkMaster
+  rank          Int         @default(1)
+  acquiredAtLevel Int
+  acquiredAt    DateTime    @default(now())
+  
+  character     Character   @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  perk          PerkMaster  @relation(fields: [perkId], references: [id])
+  
+  @@index([characterId])
+  @@index([perkId])
+  @@map("character_perks")
+}
+
+// Active Effects (buffs, debuffs, chems, injuries)
+model ActiveEffect {
+  id            String      @id @default(cuid())
+  characterId   String
+  effectType    EffectType
+  name          String
+  description   String?
+  
+  // Modificadores
+  attributeMods Json?       // {strength: +1, agility: -2}
+  skillMods     Json?       // {smallGuns: +1}
+  drMods        Json?       // {physical: +2, energy: +1}
+  
+  duration      Int?        // Em turnos/rounds, null = permanente
+  startedAt     DateTime    @default(now())
+  expiresAt     DateTime?
+  
+  // Para chems
+  addictionRating Int?
+  
+  character     Character   @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  
+  @@index([characterId])
+  @@index([expiresAt])
+  @@map("active_effects")
+}
+
+// ============================================================================
+// INVENTORY & EQUIPMENT
+// ============================================================================
+
+// Inventory Items (instâncias de equipamento)
+model InventoryItem {
+  id            String      @id @default(cuid())
+  characterId   String?
+  npcId         String?
+  
+  itemType      ItemType
+  itemId        String      // FK para tabela específica (WeaponMaster, ArmorMaster, etc)
+  quantity      Int         @default(1)
+  condition     Int?        // % de durabilidade (0-100)
+  
+  isEquipped    Boolean     @default(false)
+  equippedSlot  String?     // "head", "torso", "left_arm", etc
+  
+  // Mods aplicados (array de IDs)
+  appliedMods   String[]    @default([])
+  
+  character     Character?  @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  npc           Npc?        @relation(fields: [npcId], references: [id], onDelete: Cascade)
+  
+  @@index([characterId])
+  @@index([npcId])
+  @@index([itemType])
+  @@map("inventory_items")
+}
+
+// ============================================================================
+// NPCs (SIMPLIFIED)
+// ============================================================================
+
+model Npc {
+  id            String      @id @default(cuid())
+  campaignId    String
+  name          String
+  level         Int
+  npcType       NpcType     // Normal, Notable, Major
+  
+  // S.P.E.C.I.A.L
+  strength      Int
+  perception    Int
+  endurance     Int
+  charisma      Int
+  intelligence  Int
+  agility       Int
+  luck          Int
+  
+  // Derived
+  maxHP         Int
+  currentHP     Int
+  defense       Int
+  initiative    Int
+  meleeDamage   Int
+  carryWeight   Int
+  luckPoints    Int
+  
+  // Damage Resistances (simplificado - mesmo valor para todas locations)
+  physicalDR    Int         @default(0)
+  energyDR      Int         @default(0)
+  radiationDR   Int         @default(0)
+  poisonDR      Int         @default(0)
+  
+  // Skills (JSON simplificado)
+  skills        Json        // {smallGuns: 3, melee: 2, ...}
+  
+  campaign      Campaign    @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  inventory     InventoryItem[]
+  
+  @@index([campaignId])
+  @@map("npcs")
+}
+
+// ============================================================================
+// MASTER DATA TABLES (Catálogos de referência)
+// ============================================================================
+
+// Weapons Master (todas as armas do corebook)
+model WeaponMaster {
+  id            String      @id @default(cuid())
+  name          String      @unique
+  weaponType    WeaponType
+  skill         Skill
+  
+  damage        String      // "3CD", "4CD+2", etc
+  damageEffects String[]    @default([]) // ["Piercing 1", "Stun"]
+  damageType    DamageType
+  
+  // Para ranged
+  fireRate      Int?
+  range         WeaponRange?
+  ammoType      String?
+  
+  qualities     String[]    @default([]) // ["Two-Handed", "Parry", "Concealed"]
+  
+  weight        Float
+  cost          Int
+  rarity        Int         @default(0)
+  
+  // Mods slots disponíveis
+  availableModSlots Json    // {receiver: true, barrel: true, ...}
+  
+  corebookPage  Int?
+  
+  @@index([weaponType])
+  @@index([skill])
+  @@map("weapon_master")
+}
+
+// Armor Master
+model ArmorMaster {
+  id            String      @id @default(cuid())
+  name          String      @unique
+  armorType     ArmorType
+  
+  location      BodyLocationEnum
+  physicalDR    Int
+  energyDR      Int
+  radiationDR   Int
+  
+  // Para Power Armor
+  maxHP         Int?
+  
+  weight        Float
+  cost          Int
+  rarity        Int         @default(0)
+  
+  // Mod slots (material, utility)
+  allowsMaterialMod Boolean  @default(true)
+  allowsUtilityMod Boolean   @default(true)
+  
+  corebookPage  Int?
+  
+  @@index([armorType])
+  @@index([location])
+  @@map("armor_master")
+}
+
+// Consumables Master (food, beverages, chems, aid)
+model ConsumableMaster {
+  id            String      @id @default(cuid())
+  name          String      @unique
+  category      ConsumableCategory
+  
+  hpHealed      Int         @default(0)
+  effects       String[]    @default([])
+  radiationDice String?     // "1CD", "2CD"
+  
+  // Para chems
+  addictionRating Int?
+  duration      Int?        // Em turnos
+  
+  // Para alcoholic
+  isAlcoholic   Boolean     @default(false)
+  
+  weight        Float
+  cost          Int
+  rarity        Int         @default(0)
+  
+  corebookPage  Int?
+  
+  @@index([category])
+  @@map("consumable_master")
+}
+
+// Mods Master (weapon, armor, clothing, robot)
+model ModMaster {
+  id            String      @id @default(cuid())
+  name          String      @unique
+  modType       ModType
+  modSlot       String?     // "receiver", "barrel", "material", "utility", etc
+  
+  applicableTo  String[]    @default([]) // Tipos de item que aceitam este mod
+  effects       String[]    @default([])
+  
+  // Modificadores numéricos
+  drModifiers   Json?       // {physical: +1, energy: +2}
+  damageBonus   String?     // "+1CD"
+  
+  requirements  String[]    @default([]) // ["Armorer 1", "Science! 2"]
+  
+  weight        Float       @default(0)
+  weightModifier Float      @default(0) // Quanto adiciona/remove do item
+  cost          Int
+  
+  corebookPage  Int?
+  
+  @@index([modType])
+  @@index([modSlot])
+  @@map("mod_master")
+}
+
+// Perks Master (todos os perks do corebook)
+model PerkMaster {
+  id            String      @id @default(cuid())
+  name          String      @unique
+  ranks         Int         @default(1)
+  
+  requirements  Json        // {level: 1, strength: 7, perks: ["Strong Back"]}
+  
+  condition     String      // Descrição de quando aplicar
+  benefit       String      // Descrição do benefício
+  
+  // Efeitos mecânicos (para cálculos automáticos)
+  mechanicalEffects Json?   // {bonusDamage: "+1CD", rerollDice: 1, ...}
+  
+  corebookPage  Int?
+  
+  characterPerks CharacterPerk[]
+  
+  @@index([name])
+  @@map("perk_master")
+}
+
+// Magazines Master
+model MagazineMaster {
+  id            String      @id @default(cuid())
+  name          String      @unique
+  rollRange     String      // "1", "2-3", etc
+  hasIssues     Boolean     @default(false)
+  
+  perkGranted   String
+  perkDescription String
+  
+  corebookPage  Int?
+  
+  @@map("magazine_master")
+}
+
+// Magazine Issues (para magazines que têm múltiplas edições)
+model MagazineIssueMaster {
+  id            String      @id @default(cuid())
+  magazineId    String
+  issueNumber   Int
+  
+  perkName      String
+  perkEffect    String
+  
+  magazine      MagazineMaster @relation(fields: [magazineId], references: [id])
+  
+  @@unique([magazineId, issueNumber])
+  @@index([magazineId])
+  @@map("magazine_issue_master")
+}
+
+model MagazineMaster {
+  id            String      @id @default(cuid())
+  name          String      @unique
+  rollRange     String
+  hasIssues     Boolean     @default(false)
+  perkGranted   String
+  perkDescription String
+  corebookPage  Int?
+  
+  issues        MagazineIssueMaster[]
+  
+  @@map("magazine_master")
+}
+
+// Ammunition Master
+model AmmoMaster {
+  id            String      @id @default(cuid())
+  name          String      @unique
+  ammoType      String      // "10mm", ".308", "Fusion Cell", etc
+  
+  damageBonus   String      // "+2CD", "+3CD"
+  baseQuantity  Int         @default(6)
+  
+  weight        Float
+  cost          Int
+  rarity        Int         @default(0)
+  
+  corebookPage  Int?
+  
+  @@index([ammoType])
+  @@map("ammo_master")
+}
+
+// ============================================================================
+// ENUMS
+// ============================================================================
+
+enum Origin {
+  BROTHERHOOD
+  GHOUL
+  SUPER_MUTANT
+  MISTER_HANDY
+  SURVIVOR
+  VAULT_DWELLER
+}
+
+enum CharacterType {
+  NORMAL
+  NOTABLE
+  MAJOR
+}
+
+enum NpcType {
+  NORMAL
+  NOTABLE
+  MAJOR
+}
+
+enum Skill {
+  ATHLETICS
+  BARTER
+  BIG_GUNS
+  ENERGY_WEAPONS
+  EXPLOSIVES
+  LOCKPICK
+  MEDICINE
+  MELEE_WEAPONS
+  PILOT
+  REPAIR
+  SCIENCE
+  SMALL_GUNS
+  SNEAK
+  SPEECH
+  SURVIVAL
+  THROWING
+  UNARMED
+}
+
+enum BodyLocationEnum {
+  HEAD
+  LEFT_ARM
+  RIGHT_ARM
+  TORSO
+  LEFT_LEG
+  RIGHT_LEG
+  // Para robôs
+  OPTICS
+  MAIN_BODY
+  ARM_1
+  ARM_2
+  ARM_3
+  THRUSTER
+}
+
+enum ItemType {
+  WEAPON_RANGED
+  WEAPON_MELEE
+  ARMOR
+  CLOTHING
+  CONSUMABLE
+  AMMO
+  MOD
+  MISC
+  MAGAZINE
+}
+
+enum WeaponType {
+  SMALL_GUN
+  ENERGY_WEAPON
+  BIG_GUN
+  MELEE
+  UNARMED
+  THROWING
+  EXPLOSIVE
+}
+
+enum WeaponRange {
+  CLOSE
+  MEDIUM
+  LONG
+}
+
+enum DamageType {
+  PHYSICAL
+  ENERGY
+  RADIATION
+  POISON
+}
+
+enum ArmorType {
+  LEATHER
+  METAL
+  COMBAT
+  SYNTH
+  MARINE
+  POWER_ARMOR
+  CLOTHING
+  DOG_ARMOR
+  ROBOT_ARMOR
+}
+
+enum ConsumableCategory {
+  AID
+  CHEM
+  FOOD
+  BEVERAGE
+}
+
+enum ModType {
+  WEAPON_MOD
+  ARMOR_MOD
+  CLOTHING_MOD
+  ROBOT_MOD
+  POWER_ARMOR_MOD
+}
+
+enum EffectType {
+  CHEM
+  INJURY
+  PERK
+  EQUIPMENT
+  ENVIRONMENTAL
+  OTHER
+}

@@ -1,0 +1,15 @@
+THROWING WEAPON,WEAPON TYPE,DAMAGE RATING,DAMAGE EFFECTS,DAMAGE TYPE,QUALITIES,WEIGHT,COST,RARITY
+Throwing Knives,Throwing,3CD,Piercing 1,Physical,"Concealed, Suppressed, Thrown (C)",<1,10,1
+Tomahawk,Throwing,4CD,Piercing 1,Physical,"Suppressed, Thrown (C)",<1,15,2
+Javelin,Throwing,4CD,Piercing 1,Physical,"Suppressed, Thrown (M)",4,10,1
+Baseball Grenade,Explosive,5CD,–,Physical,"Blast, Thrown (M)",1,40,1
+Frag Grenade,Explosive,6CD,–,Physical,"Blast, Thrown (M)",<1,50,2
+Molotov Cocktail,Explosive,4CD,Persistent,Energy,"Blast, Thrown (M)",1,20,1
+Nuka Grenade,Explosive,9CD,"Breaker, Radioactive, Vicious",Energy,"Blast, Thrown (M)",1,100,4
+Plasma Grenade,Explosive,9CD,–,Energy,"Blast, Thrown (M)",<1,135,3
+Pulse Grenade,Explosive,6CD,Stun,Energy,"Blast, Thrown (M)",<1,100,3
+Bottlecap Mine,Explosive,6CD,–,Physical,"Blast, Mine",1,75,2
+Frag Mine,Explosive,6CD,–,Physical,"Blast, Mine",1,50,2
+Nuke Mine,Explosive,9CD,"Breaker, Radioactive, Vicious",Energy,"Blast, Mine",1,100,4
+Plasma Mine,Explosive,9CD,–,Energy,"Blast, Mine",<1,135,3
+Pulse Mine,Explosive,6CD,Stun,Energy,"Blast, Mine",<1,100,3

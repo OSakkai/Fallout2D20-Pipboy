@@ -667,7 +667,7 @@ export const PipBoy = () => {
             <ScreenOutline>
               <ScreenInset>
                 <MonitorBezel>
-                  <CRTEffect />
+                  <CRTEffect showScanlines={false} />
                   <AnimatePresence mode="wait">
                     {bootStage === 'off' && (
                       <OffScreen

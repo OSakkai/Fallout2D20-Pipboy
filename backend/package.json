@@ -9,7 +9,8 @@
     "start:dev": "ts-node-dev --respawn --transpile-only src/main.ts",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
-    "prisma:studio": "prisma studio"
+    "prisma:studio": "prisma studio",
+    "seed": "ts-node prisma/seed.ts"
   },
   "keywords": ["fallout", "rpg", "pipboy", "nestjs"],
   "author": "",

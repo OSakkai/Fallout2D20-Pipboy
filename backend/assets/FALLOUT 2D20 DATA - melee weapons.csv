@@ -1,0 +1,27 @@
+MELEE WEAPON,WEAPON TYPE,DAMAGE RATING,DAMAGE EFFECTS,DAMAGE TYPE,QUALITIES,WEIGHT,COST,RARITY
+Unarmed Strike,Unarmed,2CD,–,Physical,–,–,–,–
+Handy Rock,Unarmed,2CD,Vicious,Physical,Thrown (C),1,–,–
+Gun Bash (1H),Melee Weapon,2CD,Stun,Physical,—,As Gun,–,–
+Gun Bash,Melee Weapon,3CD,Stun,Physical,–,As Two-Handed Gun,–,–
+Sword,Melee Weapon,4CD,Piercing 1,Physical,Parry,3,50,2
+Combat Knife,Melee Weapon,3CD,Piercing 1,Physical,–,1,25,1
+Machete,Melee Weapon,3CD,Piercing 1,Physical,–,2,25,1
+Ripper,Melee Weapon,4CD,Vicious,Physical,–,6,50,2
+Shishkebab,Melee Weapon,5CD,Piercing 1,Energy,Parry,3,200,3
+Switchblade,Melee Weapon,2CD,Piercing 1,Physical,Concealed,1,20,0
+Baseball Bat,Melee Weapon,4CD,–,Physical,Two-Handed,3,25,1
+Aluminum Baseball Bat,Melee Weapon,5CD,–,Physical,Two-Handed,2,32,2
+Board,Melee Weapon,4CD,–,Physical,Two-Handed,3,20,0
+Lead Pipe,Melee Weapon,3CD,–,Physical,–,3,15,0
+Pipe Wrench,Melee Weapon,3CD,–,Physical,–,2,30,1
+Pool cue,Melee Weapon,3CD,–,Physical,Two-Handed,1,10,0
+Rolling Pin,Melee Weapon,3CD,–,Physical,–,1,10,0
+Baton,Melee Weapon,3CD,–,Physical,–,2,15,1
+Sledgehammer,Melee Weapon,5CD,–,Physical,–,12,40,2
+Super Sledge,Melee Weapon,6CD,Breaking,Physical,Two-Handed,20,180,3
+Tire Iron,Melee Weapon,3CD,–,Physical,–,2,25,1
+Walking Cane,Melee Weapon,3CD,–,Physical,–,2,10,0
+Boxing Glove,Unarmed,3CD,Stun,Physical,–,1,10,1
+Deathclaw Gauntlet,Unarmed,5CD,Piercing 1,Physical,–,10,75,3
+Knuckles,Unarmed,3CD,–,Physical,Concealed,<1,10,1
+Power Fist,Unarmed,4CD,Stun,Physical,–,4,100,2

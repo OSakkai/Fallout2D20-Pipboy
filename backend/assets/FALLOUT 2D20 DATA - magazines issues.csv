@@ -1,0 +1,88 @@
+MAGAZINE,D20 ROLL,ISSUE,EFFECT
+Astoundingly Awesome Tales,1-'2,Attack of the Fishmen!,+1CD on attacks vs mirelurk
+Astoundingly Awesome Tales,3-'4,Rise of the Mutants!,+1CD on attacks vs super mutants
+Astoundingly Awesome Tales,5-'6,Attack of the Metal Men!,+2 to Physical and Energy damage resistances vs Robots
+Astoundingly Awesome Tales,7-'8,The Mad Russian's Revenge!,+2 to Poison damage resistance
+Astoundingly Awesome Tales,9-'10,The Starlet Sniper!,+1CD on attacks with Accurate weapons
+Astoundingly Awesome Tales,11-'12,Curse of the Burned!,+1CD on attacks vs Ghouls
+Astoundingly Awesome Tales,13-'14,Giant Insects Invade!,+2 to Radiation damage resistance
+Astoundingly Awesome Tales,15-'16,Deadly Lasers!,+1CD on attacks with Energy weapons
+Astoundingly Awesome Tales,17-'18,Science Gone Mad!,+2 to Energy damage resistance
+Astoundingly Awesome Tales,19-'20,Surrounded by the Dead!,+1CD on attacks where you spend one or more Ammunition for bonus damage
+Backwoodsman,1-'2,Get Off My Lawn,Find twice as much meat from a butchered creature
+Backwoodsman,3-'4,Down Home Cookin',Add '+2CD damage to a Thrown weapon attack (other than an Explosive)
+Backwoodsman,5-'6,Homesteading Horror,Reduce the difficulty of crafting a weapon by '1 (min. of '0)
+Backwoodsman,7-'8,Hardy as a Sasquatch,"When scavenging from plants, gain twice as much"
+Backwoodsman,9-'10,Carnivorous Rabbits of Appalachia,Add '+2CD damage to an attack against a Mammal or Lizard
+Backwoodsman,11-'12,The Appalachia Squirrel Massacre,One item of cooked food you make and eat heals '+3 HP
+Backwoodsman,13-'14,Art of the Tomahawk,Reduce difficulty of a test to resist catching a disease by '1 (min. of '0)
+Backwoodsman,15-'16,The Gunsmith of Harper's Ferry,"When you find ammo, you find '+2CD more shots"
+Backwoodsman,17-'18,The Ohio River Hermit,Reduce the difficulty of repairing a damaged item by '1 (min. '0)
+Backwoodsman,19-'20,Nightmare in the Garden,Heal '+2HP when you consume an Alcoholic drink
+Grognak the Barbarian,1-'2,Blood on the Harp,One successful melee attack you make inflicts '+2CD damage
+Grognak the Barbarian,3-'4,Cometh the Trickster,Add '+1 to the difficulty of another character's skill test to detect you
+Grognak the Barbarian,5-'6,Jungle of the Bat-Babies,"When you suffer Poison damage, gain '+3 Poison damage resistance"
+Grognak the Barbarian,7-'8,In the Bosom of the Corsair Queen,One successful melee attack you make automatically inflicts a Critical Hit
+Grognak the Barbarian,9-'10,"Demon Slaves, Demon Sands",One attack against Ghouls inflicts '+2CD damage
+Grognak the Barbarian,11-'12,Enter Maula: War Maiden of Mars,"When you make a melee attack with a Two-Handed melee weapon, gain the Piercing '1 damage effect (or '+1 to any existing Piercing effect)"
+Grognak the Barbarian,13-'14,Fatherless Cur!,Ignore one complication on a melee attack
+Grognak the Barbarian,15-'16,Lost in the Snows of Lust,Gain '+2 Physical damage resistance against one attack
+Grognak the Barbarian,17-'18,The Lair of the Virgin Eaters,Gain '+10 Carry weight for one scene
+Grognak the Barbarian,19-'20,What Sorcery is This?,Gain '+2 Energy damage resistance against one attack
+Guns and Bullets,1-'2,The Future of Hunting?,One attack against Robots inflicts '+2CD damage
+Guns and Bullets,3-'4,Lasers & Hunting: Acceptable Overkill,One attack with a Laser weapon gains the Vicious damage effect if it didn't already have it
+Guns and Bullets,5-'6,Little Guns for Little Ladies,One attack with a Small Guns weapon gains the Vicious damage effect if it didn't have it already
+Guns and Bullets,7-'8,Street Guns of Detroit,Gain an extra '2 AP after one successful attack. This AP must be spent immediately: it cannot be saved
+Guns and Bullets,9-'10,Avoid Those Pesky Gun Laws!,"When you salvage a weapon, gain '2 AP which may only be spent to salvage additional units of materials"
+Guns and Bullets,11-'12,The Moon: A Communist Doomsday Device?!,Gain '+2 to Physical or Energy damage resistance against one attack at night
+Guns and Bullets,13-'14,"Take Aim, Army Style",One aimed attack made with a weapon which lacks the Accurate quality inflicts '+2CD damage
+Guns and Bullets,15-'16,Bear-Proofing your Campsite,One attack against Yao Guai inflicts '+3CD damage
+Guns and Bullets,17-'18,Plasma: The Weapon of Tomorrow,One attack with a Plasma weapon gains the Vicious damage effect if it didn't already have it
+Guns and Bullets,19-'20,Guide to Hunting Commies!,One attack against an enemy with a lower level than you inflicts '+2CD damage
+Live & Love,1-'2,Life Long Best Friends!,+1 Maximum Health Points to all party members for one scene
+Live & Love,3-'4,Nuke-the-Man!,+1CD damage to attacks from all party members for one scene
+Live & Love,5-'6,Trim the Fat!,Regain twice as many HP from fruit or vegetables eaten in one scene
+Live & Love,7-'8,The Secretary Charmer,"At the start of one scene, add '+1 AP to the group pool"
+Live & Love,9-'10,Talk Yourself Sober,Gain '1 Luck point (lost at the end of the scene if not used) when you consume an Alcoholic drink
+Live & Love,11-'12,Advice from Married Men,+1 Physical damage resistance to all party members for one scene
+Live & Love,13-'14,Beware the Man Handler,The group AP pool may contain '1 AP more than normal for one scene
+Live & Love,15-'16,An Experience to Remember,Choose one other Magazine perk you have previously used but not learned; that now takes effect
+Live & Love,17-'18,I Married a Robot,+2 to all damage resistances against Robots for one scene
+Live & Love,19-'20,Re-roll result,–
+Tesla Science Magazine,1-'2,Will Robots Rule the World?,+2 to Physical and Energy damage resistances vs Robots
+Tesla Science Magazine,3-'4,"What is Plasma, anyway?",+2 to Physical and Energy damage resistances vs Plasma weapons
+Tesla Science Magazine,5-'6,Rocket Science for Toddlers,+2CD damage inflicted by one attack with a Blast weapon
+Tesla Science Magazine,7-'8,Tomorrow's Technology for Today's Super Soldiers,"After spending a fusion core charge, you may spend '1 Luck point: if you do so the charge is not spent"
+Tesla Science Magazine,9-'10,Giant Super Weapons!,"Once, when you fire a Gatling weapon, you consume ammunition at '8x the rate, rather than '10x the rate"
+Tesla Science Magazine,11-'12,Geckos and Gamma Radiation,+2CD damage inflicted on one attack against a Mutated creature
+Tesla Science Magazine,13-'14,U.S. Army Goes to Space,"On a single attack with an Energy weapon, you inflict a Critical Hit if you inflict '3 or more damage after damage resistance (rather than the normal '5 or more damage)"
+Tesla Science Magazine,15-'16,10 Number 1 Hits!!! Rock-o-bot Takes the Nation by Storm!!,"Once, when you inflict a Critical Hit, increase the total damage inflicted by '+2"
+Tesla Science Magazine,17-'18,Future of Warfare?,"On a single attack with a Big Gun, you inflict a Critical Hit if you inflict '3 or more damage after damage resistance (rather than the normal '5 or more damage)"
+Tesla Science Magazine,19-'20,Re-roll result,–
+Tumblers Today,1-'4,Mysteries of the Master Key Exposed!,You may re-roll 1d20 on a single Lockpicking test
+Tumblers Today,5-'8,Bobby Pins: More Effective Than Lockpicks?,"When using a Bobby Pin, reduce the difficulty of a Lockpicking test by a further '1 (minimum '0)"
+Tumblers Today,9-'12,Confessions of a Housebreaker,"When scavenging or looting, spend '1 Luck to find '2+'2CD Bobby Pins"
+Tumblers Today,13-'16,Open Any Lock in 5 Seconds Flat,"When you successfully pick a lock, you may use the Reduce Time AP option without spending AP"
+Tumblers Today,17-'20,Locksmith Certification Special—Pass with Flying Colors,"When suffer one or more complications on a Lockpicking test, spend '1 Luck point to ignore those complications"
+Unstoppables,1-'4,Dr. Brainwash and His Army of De-Capitalists!,Spend '3 Luck points to avoid all damage from a single attack or hazard
+Unstoppables,5-'8,Who Can Stop the Unstoppable Grog-Na-Rok?!,Spend '2 Luck points to avoid all damage from an attack from a Mutated Human (including Ghouls and super mutants)
+Unstoppables,9-'12,Commie-Kazi vs. Manta Man,Spend '1 Luck point to avoid all damage from a Blast weapon
+Unstoppables,13-'16,Trapped in the Dimension of the Pterror-dactyls!,Spend '1 Luck point to avoid all damage from a single melee attack
+Unstoppables,17-'20,Visit the Ux-Ron Galaxy!,Spend '1 Luck point to avoid all Energy damage from a single attack
+U.S. Covert Operations Manual,1-'2,FH 5-01 Whistling in the Dark,"If you are detected while sneaking, you add '+2 to Physical damage resistance against the first attack you receive after being detected"
+U.S. Covert Operations Manual,3-'4,FH 5-02 Urban Camouflage,Enemies suffer '+1 difficulty on tests to detect you; this does not stack with any difficulty increases for poor light or darkness
+U.S. Covert Operations Manual,5-'6,FH 5-03 Facepaint Fundamentals,+1 to all damage resistances against attacks from Character NPCs
+U.S. Covert Operations Manual,7-'8,FH 5-04 Not the Soldiers You're Looking For,+1CD damage inflicted by attacks against Character NPCs
+U.S. Covert Operations Manual,9-'10,FH 5-05 Who Goes There?,"When you spend a Luck point to re-roll a d20 on a PER test, instead count that die as if it had rolled a '1"
+U.S. Covert Operations Manual,11-'12,"FH 5-06 Squeaky Floorboard, Sudden Death","Once, when you suffer one or more Complications on a Sneak test, ignore the complications"
+U.S. Covert Operations Manual,13-'14,FH 5-07 Getting the Drop on the Communists,"Once, when an enemy aims before making an attack against you, you may cause them to lose the benefits of aiming"
+U.S. Covert Operations Manual,15-'16,"FH 5-08 Bushes, Boxes, and Beehives: Camouflage Special",+2CD damage inflicted by an unarmed attack or an attack made with a knife
+U.S. Covert Operations Manual,17-'18,FH 5-09 Look Better in Black,"Once, when using a Stealth Boy, it lasts for one additional turn"
+U.S. Covert Operations Manual,19-'20,FH 5-10 Tiptoe Through the Tulips,"When you spend a Luck point to re-roll a d20 on an AGI test, instead count that die as if it had rolled a '1"
+Wasteland Survival Guide,1-'3,Farming the Wastes,Consuming a fruit or vegetable food item heals twice as many HP
+Wasteland Survival Guide,4-'6,Insect Repellent Special,Increase all damage resistances by '+2 vs an attack from an Insect
+Wasteland Survival Guide,7-'9,The Bright Side of Radiation Poisoning,"When you consume irradiated food or drink, heal additional HP equal to the roll on the CD"
+Wasteland Survival Guide,10-'12,Coupon Spectacular,"When buying food or drink items, the price is shifted an additional '10% in your favor"
+Wasteland Survival Guide,13-'15,Water Aerobics for Ghouls,Reduce the difficulty of an Athletics test to swim by '1 (min. '0)
+Wasteland Survival Guide,16-'18,Self Defense Secrets,Gain '+1 defense against a melee attack
+Wasteland Survival Guide,19-'20,Hunting in the Wastes,"When you butcher an animal you've killed, and the amount of meat found can be increased by spending AP, you gain '1 bonus AP for that purpose (this AP is lost if not used)"
