@@ -26,12 +26,29 @@ async function bootstrap() {
   // Swagger API Documentation
   const config = new DocumentBuilder()
     .setTitle('Fallout 2d20 Pip-Boy API')
-    .setDescription('API REST para o sistema de RPG Fallout 2d20 Pip-Boy - Sistema de gerenciamento de personagens, partidas e inventário')
-    .setVersion('1.0')
+    .setDescription(`
+      API REST para o sistema de RPG Fallout 2d20 Pip-Boy
+
+      ## Features Implementadas
+      - ✅ Sistema de autenticação JWT (Login/Register/Guest)
+      - ✅ Gerenciamento de personagens com SPECIAL, HP, XP
+      - ✅ Sistema de inventário por categoria (WEAPON, ARMOR, AID, MISC, AMMO)
+      - ✅ Gerenciamento de partidas/campanhas com código único
+      - ✅ Encyclopedia de dados do Fallout 2D20 Corebook
+      - ✅ WebSocket real-time para sincronização de eventos
+
+      ## Próximas Features
+      - [ ] Endpoints para criação de personagem (wizard de 5 steps)
+      - [ ] Endpoints para gerenciamento de campanhas (GM)
+      - [ ] Sistema de convites para campanhas
+      - [ ] Party Management (adicionar/remover jogadores)
+    `)
+    .setVersion('2.0')
     .addTag('auth', 'Autenticação e gerenciamento de usuários')
-    .addTag('characters', 'Gerenciamento de personagens')
+    .addTag('characters', 'Gerenciamento de personagens (SPECIAL, HP, XP, Skills)')
+    .addTag('campaigns', 'Gerenciamento de campanhas (GM) - Em desenvolvimento')
     .addTag('parties', 'Gerenciamento de partidas/sessões')
-    .addTag('items', 'Gerenciamento de inventário')
+    .addTag('items', 'Gerenciamento de inventário por categoria')
     .addTag('encyclopedia', 'Consulta de dados do Fallout 2D20 Corebook (armas, armaduras, consumíveis, perks, etc)')
     .addBearerAuth(
       {

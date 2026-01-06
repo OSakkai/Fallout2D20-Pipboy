@@ -13,6 +13,26 @@ Interface autêntica do Pip-Boy 3000 Mk IV para o sistema de RPG de mesa Fallout
   - Transições suaves com Framer Motion
   - Beep sounds autênticos do Pip-Boy
 
+- ✅ **Sistema de Criação de Personagem**
+  - Wizard de 5 steps com validação
+  - Step 1: Nome do personagem com preview Vault Boy
+  - Step 2: Seleção de Origem (6 origens disponíveis)
+    - Vault Dweller, Wastelander, Ghoul, Super Mutant, Brotherhood Initiate, Robot
+    - Modificadores SPECIAL por origem
+  - Step 3: Distribuição de atributos S.P.E.C.I.A.L. (10 pontos extras)
+  - Step 4: Seleção de 3 Tag Skills (com sugestões baseadas em origem)
+  - Step 5: Review final com stats derivadas (HP, Defense, Initiative, Melee Damage)
+  - Animações suaves entre steps com Framer Motion
+  - Sons de feedback para cada interação
+
+- ✅ **Sistema de Gerenciamento de Campanha**
+  - NewGameMenu: Separação clara entre Mestres e Jogadores
+  - CampaignManager para Game Masters:
+    - Criação de nova campanha (nome, descrição, máx. jogadores)
+    - Gerenciamento de campanhas existentes
+    - Interface preparada para Party Management
+  - Fluxo separado: CREATE CHARACTER (jogadores) vs START CAMPAIGN (mestres)
+
 - ✅ **Visual Autêntico Fallout 4**
   - Cor oficial: `#12FF15` (RGB 18, 255, 21)
   - Fonte: Monofonto (oficial Pip-Boy)
@@ -79,13 +99,27 @@ Fallout2D20-Pipboy/
 │   ├── Dockerfile
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── PipBoy/      # Componentes principais
+│   │   │   ├── PipBoy/      # Componentes principais do Pip-Boy
 │   │   │   ├── Tabs/        # Tabs (STAT, INV, DATA, MAP, RADIO)
+│   │   │   ├── Terminal/    # Terminal screens (Login, MainMenu, etc.)
+│   │   │   │   ├── CharacterCreation/  # Wizard de criação de personagem
+│   │   │   │   │   ├── Step2BasicInfo.tsx
+│   │   │   │   │   ├── Step3Origin.tsx
+│   │   │   │   │   ├── Step4Special.tsx
+│   │   │   │   │   ├── Step5Skills.tsx
+│   │   │   │   │   └── Step6Review.tsx
+│   │   │   │   ├── CharacterCreation.tsx  # Main wizard component
+│   │   │   │   ├── NewGameMenu.tsx        # Menu NEW GAME
+│   │   │   │   ├── CampaignManager.tsx    # Gerenciamento de campanhas
+│   │   │   │   ├── MainMenu.tsx
+│   │   │   │   ├── LoginScreen.tsx
+│   │   │   │   └── Encyclopedia.tsx
 │   │   │   └── Effects/     # Efeitos visuais (CRT)
-│   │   ├── hooks/           # Custom hooks (useSound)
+│   │   ├── hooks/           # Custom hooks (usePipBoySound)
+│   │   ├── data/            # Game data (origins, skills)
 │   │   ├── styles/          # Sistema de cores e temas
 │   │   ├── utils/           # Utilitários (soundGenerator)
-│   │   └── types/           # TypeScript types
+│   │   └── types/           # TypeScript types (character, etc.)
 │   └── public/
 │       └── assets/
 │           ├── images/      # Vault Boy GIFs, Perks PNGs, Overlay
@@ -200,10 +234,15 @@ npm run build
 Este projeto está em desenvolvimento ativo. Features planejadas:
 
 **Próximas Implementações:**
+- [x] ✅ Sistema de criação de personagem completo (5 steps)
+- [x] ✅ Sistema de gerenciamento de campanha (GM)
+- [x] ✅ NewGameMenu com separação Mestres/Jogadores
+- [ ] Party Management Screen (adicionar/remover jogadores)
+- [ ] Sistema de convites para campanhas
+- [ ] Integração backend para personagens e campanhas
 - [ ] Sistema de combate em tempo real com zonas
 - [ ] Tela do Game Master (GM screen)
 - [ ] Matchmaking com código de sala
-- [ ] Sistema de criação de personagem
 - [ ] Guidebook interativo das regras 2d20
 - [ ] Cálculos automáticos (dano, cura, movimento, testes)
 - [ ] Sistema de crafting

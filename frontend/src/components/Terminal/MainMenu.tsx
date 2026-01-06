@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { PIPBOY_COLORS } from '../../styles/pipboy-colors';
 import { CRTEffect } from '../Effects/CRTEffect';
+import { NewGameMenu } from './NewGameMenu';
+import { CampaignManager } from './CampaignManager';
+import { CharacterCreation } from './CharacterCreation';
+import type { CharacterCreationData } from '../../types/character';
 
 interface MainMenuProps {
   onNewGame: () => void;
@@ -16,7 +20,7 @@ interface MainMenuProps {
   isGuest?: boolean;
 }
 
-type ViewMode = 'menu' | 'devTools' | 'pageNav' | 'apiTest';
+type ViewMode = 'menu' | 'devTools' | 'pageNav' | 'apiTest' | 'newGame' | 'campaignManager' | 'characterCreation';
 
 export const MainMenu: React.FC<MainMenuProps> = ({
   onNewGame,
@@ -42,8 +46,25 @@ export const MainMenu: React.FC<MainMenuProps> = ({
     audio.play().catch(err => console.log('Audio play failed:', err));
   };
 
+  const handleCharacterCreationComplete = (characterData: CharacterCreationData) => {
+    console.log('Character created:', characterData);
+    // TODO: Send character data to backend
+    // For now, just call onNewGame
+    playBeep();
+    setViewMode('menu');
+    onNewGame();
+  };
+
+  const handleCampaignCreated = (campaignData: any) => {
+    console.log('Campaign created:', campaignData);
+    // TODO: Send campaign data to backend and navigate to party management
+    playBeep();
+    setViewMode('menu');
+    onNewGame();
+  };
+
   const menuItems = [
-    { label: 'NEW GAME', action: onNewGame },
+    { label: 'NEW GAME', action: () => { playBeep(); setViewMode('newGame'); } },
     { label: 'LOAD GAME', action: onLoadGame },
     { label: 'SETTINGS', action: onSettings },
     { label: 'DEV TOOLS', action: () => { playBeep(); setViewMode('devTools'); } },
@@ -111,6 +132,37 @@ export const MainMenu: React.FC<MainMenuProps> = ({
   const displayName = isGuest
     ? 'GUEST_USER'
     : (userName || userEmail?.split('@')[0] || 'UNKNOWN').toUpperCase();
+
+  // Show fullscreen components based on view mode
+  if (viewMode === 'newGame') {
+    return (
+      <NewGameMenu
+        onStartCampaign={() => { playBeep(); setViewMode('campaignManager'); }}
+        onCreateCharacter={() => { playBeep(); setViewMode('characterCreation'); }}
+        onBack={() => { playBeep(); setViewMode('menu'); }}
+        playSound={playBeep}
+      />
+    );
+  }
+
+  if (viewMode === 'campaignManager') {
+    return (
+      <CampaignManager
+        onBack={() => { playBeep(); setViewMode('newGame'); }}
+        onCampaignCreated={handleCampaignCreated}
+        playSound={playBeep}
+      />
+    );
+  }
+
+  if (viewMode === 'characterCreation') {
+    return (
+      <CharacterCreation
+        onBack={() => { playBeep(); setViewMode('newGame'); }}
+        onComplete={handleCharacterCreationComplete}
+      />
+    );
+  }
 
   return (
     <TerminalContainer onKeyDown={handleKeyDown} tabIndex={0}>

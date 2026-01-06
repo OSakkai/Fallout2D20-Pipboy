@@ -24,6 +24,11 @@ export const PIPBOY_COLORS = {
   // Esquemas alternativos (para futuro)
   amber: '#FFB641',          // Fallout New Vegas
   blue: '#2ECFFF',           // Nuka Cola Quantum
+
+  // Cores de status
+  success: '#12FF15',        // Success - verde padrão
+  warning: '#FFB641',        // Warning - amber
+  danger: '#FF4141',         // Danger - red
 } as const;
 
 export const PIPBOY_TEXT_GLOW = {
