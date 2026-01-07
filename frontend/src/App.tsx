@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { PipBoy } from './components/PipBoy/PipBoy';
+import { useState, useEffect } from 'react';
+import { PipBoyWithCharacter } from './components/PipBoy/PipBoyWithCharacter';
 import { LoginScreen, MainMenu, Encyclopedia } from './components/Terminal';
 
 type AppScreen = 'login' | 'mainMenu' | 'pipboy' | 'encyclopedia';
@@ -14,6 +14,23 @@ interface UserData {
 function App() {
   const [currentScreen, setCurrentScreen] = useState<AppScreen>('login');
   const [userData, setUserData] = useState<UserData | null>(null);
+
+  // Restore session from localStorage on mount
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const email = localStorage.getItem('userEmail');
+    const username = localStorage.getItem('userName');
+
+    if (token && email) {
+      setUserData({
+        email,
+        username: username || undefined,
+        isGuest: email === 'guest@local',
+        token,
+      });
+      setCurrentScreen('mainMenu');
+    }
+  }, []);
 
   // Handlers do LoginScreen
   const handleLogin = async (email: string, password: string) => {
@@ -34,6 +51,12 @@ function App() {
       }
 
       const data = await response.json();
+
+      // Save token to localStorage
+      localStorage.setItem('token', data.access_token);
+      localStorage.setItem('userEmail', data.user.email);
+      localStorage.setItem('userName', data.user.username);
+
       setUserData({
         email: data.user.email,
         username: data.user.username,
@@ -65,6 +88,12 @@ function App() {
       }
 
       const data = await response.json();
+
+      // Save token to localStorage
+      localStorage.setItem('token', data.access_token);
+      localStorage.setItem('userEmail', data.user.email);
+      localStorage.setItem('userName', data.user.username);
+
       setUserData({
         email: data.user.email,
         username: data.user.username,
@@ -95,6 +124,12 @@ function App() {
       }
 
       const data = await response.json();
+
+      // Save token to localStorage
+      localStorage.setItem('token', data.access_token);
+      localStorage.setItem('userEmail', 'guest@local');
+      localStorage.setItem('userName', 'Guest');
+
       setUserData({
         email: 'guest@local',
         isGuest: true,
@@ -124,6 +159,11 @@ function App() {
   };
 
   const handleExit = () => {
+    // Clear localStorage
+    localStorage.removeItem('token');
+    localStorage.removeItem('userEmail');
+    localStorage.removeItem('userName');
+
     // Volta para tela de login
     setUserData(null);
     setCurrentScreen('login');
@@ -172,8 +212,8 @@ function App() {
     return <Encyclopedia onBack={handleBackToMainMenu} />;
   }
 
-  // Futuramente: tela do Pip-Boy
-  return <PipBoy />;
+  // Tela do Pip-Boy com seletor de personagem e cheats
+  return <PipBoyWithCharacter />;
 }
 
 export default App;

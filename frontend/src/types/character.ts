@@ -1,10 +1,10 @@
 export type Origin =
   | 'VAULT_DWELLER'
-  | 'WASTELANDER'
+  | 'SURVIVOR'
   | 'GHOUL'
   | 'SUPER_MUTANT'
-  | 'BROTHERHOOD_INITIATE'
-  | 'ROBOT';
+  | 'BROTHERHOOD'
+  | 'MISTER_HANDY';
 
 export type Skill =
   | 'ATHLETICS'

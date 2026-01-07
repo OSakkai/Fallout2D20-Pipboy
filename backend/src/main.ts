@@ -31,17 +31,18 @@ async function bootstrap() {
 
       ## Features Implementadas
       - ✅ Sistema de autenticação JWT (Login/Register/Guest)
-      - ✅ Gerenciamento de personagens com SPECIAL, HP, XP
+      - ✅ Criação completa de personagem via wizard (POST /characters/wizard)
+      - ✅ Gerenciamento de personagens com SPECIAL, Skills, Derived Stats
       - ✅ Sistema de inventário por categoria (WEAPON, ARMOR, AID, MISC, AMMO)
       - ✅ Gerenciamento de partidas/campanhas com código único
       - ✅ Encyclopedia de dados do Fallout 2D20 Corebook
       - ✅ WebSocket real-time para sincronização de eventos
 
       ## Próximas Features
-      - [ ] Endpoints para criação de personagem (wizard de 5 steps)
-      - [ ] Endpoints para gerenciamento de campanhas (GM)
+      - [ ] Endpoints para gerenciamento de campanhas (GM interface)
       - [ ] Sistema de convites para campanhas
       - [ ] Party Management (adicionar/remover jogadores)
+      - [ ] Sistema de progressão de personagem (level up)
     `)
     .setVersion('2.0')
     .addTag('auth', 'Autenticação e gerenciamento de usuários')

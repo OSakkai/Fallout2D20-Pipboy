@@ -13,8 +13,8 @@ export const ORIGINS: Record<string, OriginData> = {
     suggestedTagSkills: ['SCIENCE', 'REPAIR', 'MEDICINE'],
     flavorText: 'Growing up in a Vault has made you resourceful with technology and knowledgeable about pre-war science.',
   },
-  WASTELANDER: {
-    id: 'WASTELANDER',
+  SURVIVOR: {
+    id: 'SURVIVOR',
     name: 'Wastelander',
     description: 'Hardened by life in the harsh Wasteland, you know how to survive against all odds.',
     specialModifiers: {
@@ -51,8 +51,8 @@ export const ORIGINS: Record<string, OriginData> = {
     suggestedTagSkills: ['MELEE_WEAPONS', 'BIG_GUNS', 'ATHLETICS'],
     flavorText: 'The FEV virus made you a towering giant of muscle and resilience, but at a cognitive cost.',
   },
-  BROTHERHOOD_INITIATE: {
-    id: 'BROTHERHOOD_INITIATE',
+  BROTHERHOOD: {
+    id: 'BROTHERHOOD',
     name: 'Brotherhood Initiate',
     description: 'Trained by the Brotherhood of Steel, you are skilled in technology and combat.',
     specialModifiers: {
@@ -63,8 +63,8 @@ export const ORIGINS: Record<string, OriginData> = {
     suggestedTagSkills: ['ENERGY_WEAPONS', 'SCIENCE', 'REPAIR'],
     flavorText: 'The Brotherhood has trained you in the ways of technology preservation and tactical warfare.',
   },
-  ROBOT: {
-    id: 'ROBOT',
+  MISTER_HANDY: {
+    id: 'MISTER_HANDY',
     name: 'Robot',
     description: 'A mechanical being, immune to biological hazards but dependent on repairs.',
     specialModifiers: {

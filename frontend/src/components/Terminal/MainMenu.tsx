@@ -7,6 +7,7 @@ import { NewGameMenu } from './NewGameMenu';
 import { CampaignManager } from './CampaignManager';
 import { CharacterCreation } from './CharacterCreation';
 import type { CharacterCreationData } from '../../types/character';
+import { createCharacterFromWizard } from '../../services/characterApi';
 
 interface MainMenuProps {
   onNewGame: () => void;
@@ -46,13 +47,30 @@ export const MainMenu: React.FC<MainMenuProps> = ({
     audio.play().catch(err => console.log('Audio play failed:', err));
   };
 
-  const handleCharacterCreationComplete = (characterData: CharacterCreationData) => {
+  const handleCharacterCreationComplete = async (characterData: CharacterCreationData) => {
     console.log('Character created:', characterData);
-    // TODO: Send character data to backend
-    // For now, just call onNewGame
-    playBeep();
-    setViewMode('menu');
-    onNewGame();
+
+    try {
+      // Get token from localStorage
+      const token = localStorage.getItem('token');
+      if (!token) {
+        alert('You must be logged in to create a character');
+        setViewMode('menu');
+        return;
+      }
+
+      // Send character data to backend
+      const createdCharacter = await createCharacterFromWizard(characterData, token);
+      console.log('Character saved to backend:', createdCharacter);
+
+      playBeep();
+      alert(`Character "${createdCharacter.name}" created successfully!`);
+      setViewMode('menu');
+      onNewGame();
+    } catch (error) {
+      console.error('Failed to create character:', error);
+      alert(`Failed to create character: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
   };
 
   const handleCampaignCreated = (campaignData: any) => {

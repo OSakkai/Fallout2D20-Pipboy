@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import type { PipBoyTab } from '../../types';
-import { StatTab } from '../Tabs/StatTab';
-import { InvTab } from '../Tabs/InvTab';
+import { StatTab } from '../Tabs/StatTabWithData';
+import { InvTab } from '../Tabs/InvTabWithData';
 import { DataTab } from '../Tabs/DataTab';
 import { MapTab } from '../Tabs/MapTab';
 import { RadioTab } from '../Tabs/RadioTab';

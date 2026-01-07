@@ -46,18 +46,43 @@ Interface autêntica do Pip-Boy 3000 Mk IV para o sistema de RPG de mesa Fallout
   - Sons de hover, click, select, tab change, boot, error, static
   - beepPipboy.mp3 para interações do terminal
 
-- ✅ **5 Tabs Completas**
-  - **STAT**: SPECIAL, Status, Perks
-  - **INV**: Weapons, Apparel, Aid, Misc
+- ✅ **5 Tabs Completas com Dados Reais da API**
+  - **STAT**: SPECIAL, Status, Perks (integrado com API)
+  - **INV**: Weapons, Apparel, Aid, Misc (integrado com API)
   - **DATA**: Quests, Notes, Stats
   - **MAP**: Local/World map com marcadores
   - **RADIO**: 3 estações com player de música
 
-- ✅ **Sistema de Perks**
+- ✅ **Sistema de Perks com Dados Reais**
   - Grid visual com cards clicáveis
-  - Integração com PNGs do Fallout 2d20
-  - Sistema de unlock/locked
-  - Painel de detalhes com requirements
+  - Integração com banco de dados (PerkMaster)
+  - Exibe perks reais do personagem (CharacterPerk)
+  - Mostra condition, benefit, ranks, level adquirido
+  - Estado vazio quando personagem não tem perks
+
+- ✅ **Sistema de Inventário com Dados Reais**
+  - Integração com character.inventory da API
+  - Organização por categoria (weapons, apparel, aid, misc, ammo)
+  - Indicador visual de itens equipados
+  - Mostra quantidade, condição, slot de equipamento
+  - Preparado para expansão com encyclopedia (WeaponMaster, ArmorMaster, etc.)
+
+- ✅ **Dev Cheats Menu (F12)**
+  - Overlay popup para testar APIs durante desenvolvimento
+  - Modificar SPECIAL attributes
+  - Atualizar Skills e suas ranks
+  - Modificar HP, XP, Level, Defense, Initiative
+  - Aplicar dano e cura (geral e por body location)
+  - Simular radiação e veneno
+  - Adicionar/remover itens do inventário
+  - Auto-refresh do Pip-Boy após usar cheats
+
+- ✅ **Character Context & API Integration**
+  - React Context (CharacterContext) para state global
+  - Hook useCharacter() para acessar dados do personagem
+  - Auto-load de personagem salvo em localStorage
+  - Refresh automático após modificações via cheats
+  - Loading states e error handling
 
 ### Backend (NestJS + TypeScript + PostgreSQL)
 - ✅ **Arquitetura Modular NestJS**
@@ -73,10 +98,26 @@ Interface autêntica do Pip-Boy 3000 Mk IV para o sistema de RPG de mesa Fallout
   - Username único para cada usuário
 
 - ✅ **Módulos CRUD Completos**
-  - Characters: SPECIAL stats, HP, level, XP
-  - Items: Categorias (WEAPON, ARMOR, AID, MISC, AMMO)
-  - Parties: Criação de sessões com código único
-  - Relações User ↔ Character ↔ Items ↔ Parties
+  - **Characters**: SPECIAL stats, HP, level, XP, skills, perks, inventory
+    - Body Locations com HP individual e Damage Resistance
+    - Derived Stats (Defense, Initiative, Melee Damage, Max/Current HP)
+    - Character Attributes (S.P.E.C.I.A.L.)
+    - Skills com ranks e tag system
+  - **Encyclopedia**: WeaponMaster, ArmorMaster, ConsumableMaster, PerkMaster
+  - **Inventory System**: ItemType genérico com relação polimórfica
+  - **Campaign System**: Campanhas, sessões, NPCs
+  - Relações User ↔ Character ↔ Inventory ↔ Campaign
+
+- ✅ **Dev/Cheat Endpoints**
+  - PUT /characters/:id/special - Modificar atributos S.P.E.C.I.A.L.
+  - PUT /characters/:id/skill - Ajustar ranks de skills
+  - PUT /characters/:id/stats - Modificar HP, XP, Level, Defense, etc.
+  - POST /characters/:id/damage - Aplicar dano (geral ou por body location)
+  - POST /characters/:id/heal - Curar HP
+  - POST /characters/:id/radiation - Aplicar radiação
+  - POST /characters/:id/poison - Modificar poison DR
+  - POST /characters/:id/inventory - Adicionar item ao inventário
+  - DELETE /characters/:id/inventory/:itemId - Remover item
 
 - ✅ **Swagger API Documentation**
   - Documentação interativa completa
@@ -233,18 +274,35 @@ npm run build
 
 Este projeto está em desenvolvimento ativo. Features planejadas:
 
-**Próximas Implementações:**
+**Implementações Recentes (v0.4.0 - 2026-01-07):**
+- [x] ✅ Correção de Origin enum (SURVIVOR, BROTHERHOOD, MISTER_HANDY)
+- [x] ✅ Integração completa Pip-Boy com API do backend
+- [x] ✅ Remoção de dados hardcoded (STAT, INV, Perks)
+- [x] ✅ CharacterContext para state management global
+- [x] ✅ Dev Cheats Menu (F12) com 9 endpoints de testes
+- [x] ✅ Auto-refresh após modificações via cheats
+- [x] ✅ Sistema de Perks com dados reais (PerkMaster + CharacterPerk)
+- [x] ✅ Sistema de Inventário com dados reais (InventoryItem)
+- [x] ✅ Character selector no Pip-Boy
+- [x] ✅ Loading states e error handling
+
+**Implementações Anteriores:**
 - [x] ✅ Sistema de criação de personagem completo (5 steps)
 - [x] ✅ Sistema de gerenciamento de campanha (GM)
 - [x] ✅ NewGameMenu com separação Mestres/Jogadores
+- [x] ✅ Integração backend para personagens e campanhas
+- [x] ✅ Body Locations com HP individual e DR
+
+**Próximas Implementações:**
+- [ ] Encyclopedia integration (buscar detalhes completos de itens)
+- [ ] Skills tab no Pip-Boy com dados reais
 - [ ] Party Management Screen (adicionar/remover jogadores)
 - [ ] Sistema de convites para campanhas
-- [ ] Integração backend para personagens e campanhas
 - [ ] Sistema de combate em tempo real com zonas
 - [ ] Tela do Game Master (GM screen)
 - [ ] Matchmaking com código de sala
 - [ ] Guidebook interativo das regras 2d20
-- [ ] Cálculos automáticos (dano, cura, movimento, testes)
+- [ ] Cálculos automáticos (testes de skill, dano com DR, etc.)
 - [ ] Sistema de crafting
 - [ ] Importação/exportação de personagens
 - [ ] Mapas de combate interativos criados pelo GM
