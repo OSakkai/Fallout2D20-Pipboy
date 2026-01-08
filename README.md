@@ -2,316 +2,328 @@
 
 Interface autêntica do Pip-Boy 3000 Mk IV para o sistema de RPG de mesa Fallout 2D20.
 
-## 🎮 Features Implementadas
+## ⚠️ AVISO IMPORTANTE: BANCO DE DADOS EM REFORMA
 
-### Frontend (React + TypeScript + Vite)
-- ✅ **ROBCO Terminal Interface**
-  - LoginScreen com visual autêntico ROBCO Industries
-  - MainMenu com monitor frame e efeitos CRT
-  - Sistema de autenticação JWT (Login/Register/Guest)
-  - DEV TOOLS menu com page navigation e API testing
-  - Transições suaves com Framer Motion
-  - Beep sounds autênticos do Pip-Boy
+**O banco de dados foi recentemente reformulado e resetado (Janeiro 2026).**
 
-- ✅ **Sistema de Criação de Personagem**
-  - Wizard de 5 steps com validação
-  - Step 1: Nome do personagem com preview Vault Boy
-  - Step 2: Seleção de Origem (6 origens disponíveis)
-    - Vault Dweller, Wastelander, Ghoul, Super Mutant, Brotherhood Initiate, Robot
-    - Modificadores SPECIAL por origem
-  - Step 3: Distribuição de atributos S.P.E.C.I.A.L. (10 pontos extras)
-  - Step 4: Seleção de 3 Tag Skills (com sugestões baseadas em origem)
-  - Step 5: Review final com stats derivadas (HP, Defense, Initiative, Melee Damage)
-  - Animações suaves entre steps com Framer Motion
-  - Sons de feedback para cada interação
+**Impactos:**
+- ❌ Personagens antigos foram perdidos
+- ❌ Tokens de autenticação antigos são inválidos
+- ✅ **Sistema de Perks completamente reformulado** - 94 perks importados
+- ✅ **Nova organização da aba STAT** - EFFECTS, SKILLS, GENERAL adicionados
+- ✅ **Sistema de Facções implementado** - Reputações e facções do wasteland
 
-- ✅ **Sistema de Gerenciamento de Campanha**
-  - NewGameMenu: Separação clara entre Mestres e Jogadores
-  - CampaignManager para Game Masters:
-    - Criação de nova campanha (nome, descrição, máx. jogadores)
-    - Gerenciamento de campanhas existentes
-    - Interface preparada para Party Management
-  - Fluxo separado: CREATE CHARACTER (jogadores) vs START CAMPAIGN (mestres)
-
-- ✅ **Visual Autêntico Fallout 4**
-  - Cor oficial: `#12FF15` (RGB 18, 255, 21)
-  - Fonte: Monofonto (oficial Pip-Boy)
-  - Efeitos CRT com scanlines e chromatic aberration
-  - Gradiente radial de fundo autêntico
-  - Overlay físico do Pip-Boy como decoração
-  - Monitor frame com TV bezel e phosphorescent glow
-
-- ✅ **Sistema de Sons**
-  - 7 tipos de beeps/clicks gerados via Web Audio API
-  - Sons de hover, click, select, tab change, boot, error, static
-  - beepPipboy.mp3 para interações do terminal
-
-- ✅ **5 Tabs Completas com Dados Reais da API**
-  - **STAT**: SPECIAL, Status, Perks (integrado com API)
-  - **INV**: Weapons, Apparel, Aid, Misc (integrado com API)
-  - **DATA**: Quests, Notes, Stats
-  - **MAP**: Local/World map com marcadores
-  - **RADIO**: 3 estações com player de música
-
-- ✅ **Sistema de Perks com Dados Reais**
-  - Grid visual com cards clicáveis
-  - Integração com banco de dados (PerkMaster)
-  - Exibe perks reais do personagem (CharacterPerk)
-  - Mostra condition, benefit, ranks, level adquirido
-  - Estado vazio quando personagem não tem perks
-
-- ✅ **Sistema de Inventário com Dados Reais**
-  - Integração com character.inventory da API
-  - Organização por categoria (weapons, apparel, aid, misc, ammo)
-  - Indicador visual de itens equipados
-  - Mostra quantidade, condição, slot de equipamento
-  - Preparado para expansão com encyclopedia (WeaponMaster, ArmorMaster, etc.)
-
-- ✅ **Dev Cheats Menu (F12)**
-  - Overlay popup para testar APIs durante desenvolvimento
-  - Modificar SPECIAL attributes
-  - Atualizar Skills e suas ranks
-  - Modificar HP, XP, Level, Defense, Initiative
-  - Aplicar dano e cura (geral e por body location)
-  - Simular radiação e veneno
-  - Adicionar/remover itens do inventário
-  - Auto-refresh do Pip-Boy após usar cheats
-
-- ✅ **Character Context & API Integration**
-  - React Context (CharacterContext) para state global
-  - Hook useCharacter() para acessar dados do personagem
-  - Auto-load de personagem salvo em localStorage
-  - Refresh automático após modificações via cheats
-  - Loading states e error handling
-
-### Backend (NestJS + TypeScript + PostgreSQL)
-- ✅ **Arquitetura Modular NestJS**
-  - Docker Compose com PostgreSQL
-  - Prisma ORM com TypeScript type-safety
-  - Estrutura preparada para escalabilidade
-
-- ✅ **Sistema de Autenticação JWT**
-  - Passport.js + JWT tokens
-  - Roles: PLAYER e GM (Game Master)
-  - Guards para rotas protegidas
-  - Modo Guest para acesso sem cadastro
-  - Username único para cada usuário
-
-- ✅ **Módulos CRUD Completos**
-  - **Characters**: SPECIAL stats, HP, level, XP, skills, perks, inventory
-    - Body Locations com HP individual e Damage Resistance
-    - Derived Stats (Defense, Initiative, Melee Damage, Max/Current HP)
-    - Character Attributes (S.P.E.C.I.A.L.)
-    - Skills com ranks e tag system
-  - **Encyclopedia**: WeaponMaster, ArmorMaster, ConsumableMaster, PerkMaster
-  - **Inventory System**: ItemType genérico com relação polimórfica
-  - **Campaign System**: Campanhas, sessões, NPCs
-  - Relações User ↔ Character ↔ Inventory ↔ Campaign
-
-- ✅ **Dev/Cheat Endpoints**
-  - PUT /characters/:id/special - Modificar atributos S.P.E.C.I.A.L.
-  - PUT /characters/:id/skill - Ajustar ranks de skills
-  - PUT /characters/:id/stats - Modificar HP, XP, Level, Defense, etc.
-  - POST /characters/:id/damage - Aplicar dano (geral ou por body location)
-  - POST /characters/:id/heal - Curar HP
-  - POST /characters/:id/radiation - Aplicar radiação
-  - POST /characters/:id/poison - Modificar poison DR
-  - POST /characters/:id/inventory - Adicionar item ao inventário
-  - DELETE /characters/:id/inventory/:itemId - Remover item
-
-- ✅ **Swagger API Documentation**
-  - Documentação interativa completa
-  - Schemas de request/response
-  - Autenticação Bearer JWT
-  - Disponível em: `http://localhost:3000/api`
-
-- ✅ **WebSocket Real-time (Socket.io)**
-  - Eventos de combate preparados (damage, healing, movement)
-  - Comunicação GM ↔ Players
-  - Base para sincronização instantânea do Pip-Boy
-
-## 📁 Estrutura do Projeto
-
-```
-Fallout2D20-Pipboy/
-├── docker-compose.yml     # Orquestração de containers
-│
-├── frontend/              # React + Vite application
-│   ├── Dockerfile
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── PipBoy/      # Componentes principais do Pip-Boy
-│   │   │   ├── Tabs/        # Tabs (STAT, INV, DATA, MAP, RADIO)
-│   │   │   ├── Terminal/    # Terminal screens (Login, MainMenu, etc.)
-│   │   │   │   ├── CharacterCreation/  # Wizard de criação de personagem
-│   │   │   │   │   ├── Step2BasicInfo.tsx
-│   │   │   │   │   ├── Step3Origin.tsx
-│   │   │   │   │   ├── Step4Special.tsx
-│   │   │   │   │   ├── Step5Skills.tsx
-│   │   │   │   │   └── Step6Review.tsx
-│   │   │   │   ├── CharacterCreation.tsx  # Main wizard component
-│   │   │   │   ├── NewGameMenu.tsx        # Menu NEW GAME
-│   │   │   │   ├── CampaignManager.tsx    # Gerenciamento de campanhas
-│   │   │   │   ├── MainMenu.tsx
-│   │   │   │   ├── LoginScreen.tsx
-│   │   │   │   └── Encyclopedia.tsx
-│   │   │   └── Effects/     # Efeitos visuais (CRT)
-│   │   ├── hooks/           # Custom hooks (usePipBoySound)
-│   │   ├── data/            # Game data (origins, skills)
-│   │   ├── styles/          # Sistema de cores e temas
-│   │   ├── utils/           # Utilitários (soundGenerator)
-│   │   └── types/           # TypeScript types (character, etc.)
-│   └── public/
-│       └── assets/
-│           ├── images/      # Vault Boy GIFs, Perks PNGs, Overlay
-│           ├── sounds/      # Audio files (boot, beep, idle, etc.)
-│           └── fonts/       # Monofonto
-│
-└── backend/               # NestJS + PostgreSQL + Prisma
-    ├── Dockerfile
-    ├── prisma/
-    │   └── schema.prisma    # Database models (User, Character, Item)
-    └── src/
-        ├── main.ts          # Application entry point
-        ├── app.module.ts    # Root module
-        ├── database/        # Prisma service & module
-        └── modules/
-            ├── auth/        # JWT authentication (Passport.js)
-            ├── characters/  # Character CRUD (SPECIAL, HP, XP)
-            ├── items/       # Inventory CRUD (by category)
-            └── websocket/   # Socket.io gateway (real-time)
-```
-
-## 🚀 Como Usar
-
-### Opção 1: Docker Compose (Recomendado)
-
-Inicie todo o ambiente (frontend + backend + database) com um único comando:
-
-```bash
-docker-compose up
-```
-
-**URLs de Acesso:**
-- Frontend: `http://localhost:5173`
-- Backend API: `http://localhost:3000`
-- Swagger Docs: `http://localhost:3000/api`
-- PostgreSQL: `localhost:5432`
-
-### Opção 2: Desenvolvimento Local
-
-#### Backend
-
-```bash
-cd backend
-npm install
-
-# Criar arquivo .env baseado no .env.example
-cp .env.example .env
-
-# Gerar Prisma Client
-npx prisma generate
-
-# Rodar migrations
-npx prisma migrate dev --name init
-
-# Iniciar servidor
-npm run start:dev
-```
-
-Backend estará em:
-- API: `http://localhost:3000`
-- Swagger: `http://localhost:3000/api`
-
-#### Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Frontend estará em `http://localhost:5173`
-
-### Build para Produção
-
-```bash
-# Frontend
-cd frontend
-npm run build
-
-# Backend
-cd backend
-npm run build
-```
-
-## 🎨 Tecnologias
-
-### Frontend
-- **React 18** - Framework UI
-- **TypeScript** - Type safety
-- **Vite** - Build tool e dev server
-- **Styled Components** - CSS-in-JS
-- **Framer Motion** - Animações
-- **Web Audio API** - Geração de sons
-
-### Backend
-- **NestJS** - Framework Node.js modular e escalável
-- **TypeScript** - Type safety completo
-- **PostgreSQL** - Database relacional
-- **Prisma ORM** - Type-safe database access
-- **Passport.js + JWT** - Autenticação e autorização
-- **Socket.io** - WebSocket para comunicação real-time
-- **Docker** - Containerização
-
-## 📝 Referências
-
-- Sistema oficial: Fallout 2d20 RPG da Modiphius
-- Visual baseado em: Fallout 4 (Bethesda)
-- Assets: [Fallout Wiki](https://fallout.fandom.com/)
-
-## 🤝 Contribuindo
-
-Este projeto está em desenvolvimento ativo. Features planejadas:
-
-**Implementações Recentes (v0.4.0 - 2026-01-07):**
-- [x] ✅ Correção de Origin enum (SURVIVOR, BROTHERHOOD, MISTER_HANDY)
-- [x] ✅ Integração completa Pip-Boy com API do backend
-- [x] ✅ Remoção de dados hardcoded (STAT, INV, Perks)
-- [x] ✅ CharacterContext para state management global
-- [x] ✅ Dev Cheats Menu (F12) com 9 endpoints de testes
-- [x] ✅ Auto-refresh após modificações via cheats
-- [x] ✅ Sistema de Perks com dados reais (PerkMaster + CharacterPerk)
-- [x] ✅ Sistema de Inventário com dados reais (InventoryItem)
-- [x] ✅ Character selector no Pip-Boy
-- [x] ✅ Loading states e error handling
-
-**Implementações Anteriores:**
-- [x] ✅ Sistema de criação de personagem completo (5 steps)
-- [x] ✅ Sistema de gerenciamento de campanha (GM)
-- [x] ✅ NewGameMenu com separação Mestres/Jogadores
-- [x] ✅ Integração backend para personagens e campanhas
-- [x] ✅ Body Locations com HP individual e DR
-
-**Próximas Implementações:**
-- [ ] Encyclopedia integration (buscar detalhes completos de itens)
-- [ ] Skills tab no Pip-Boy com dados reais
-- [ ] Party Management Screen (adicionar/remover jogadores)
-- [ ] Sistema de convites para campanhas
-- [ ] Sistema de combate em tempo real com zonas
-- [ ] Tela do Game Master (GM screen)
-- [ ] Matchmaking com código de sala
-- [ ] Guidebook interativo das regras 2d20
-- [ ] Cálculos automáticos (testes de skill, dano com DR, etc.)
-- [ ] Sistema de crafting
-- [ ] Importação/exportação de personagens
-- [ ] Mapas de combate interativos criados pelo GM
-- [ ] Interface responsiva para tablets e smartphones
-
-## 📄 Licença
-
-Este é um projeto fan-made, não oficial. Fallout é propriedade da Bethesda Softworks. O sistema Fallout 2d20 é propriedade da Modiphius Entertainment.
+**Para continuar:**
+1. Limpe o localStorage do navegador: `localStorage.clear()`
+2. Faça login novamente como **Guest** ou crie novo usuário
+3. Crie um novo personagem
+4. Explore as novas funcionalidades!
 
 ---
 
-🤖 Desenvolvido com [Claude Code](https://claude.com/claude-code)
+## 🚀 Quick Start
+
+### Iniciar o Sistema
+
+```bash
+# Clone o repositório
+git clone <repo-url>
+cd Fallout2D20-Pipboy
+
+# Inicie os containers
+docker-compose up -d
+```
+
+### Acessar
+
+- **Frontend (Pip-Boy):** http://localhost:5173
+- **Backend API:** http://localhost:3000
+- **Swagger Docs:** http://localhost:3000/api
+
+---
+
+## 🆕 Novidades - v2.0.0 (Janeiro 2026)
+
+### 🎯 Sistema de Perks Reformulado
+
+**Completamente reescrito do zero!**
+
+- ✅ **94 perks** importados do CSV oficial Fallout 2d20
+- ✅ **5 tipos de perks:** EFFECT, ABILITY, CRAFTING, COMPANION, SKILLS
+- ✅ **Parsing automático** de effects, requirements e restrictions
+- ✅ **Cálculo dinâmico** de efeitos baseado em rank e atributos
+- ✅ **7 novos endpoints** para gerenciamento de perks
+
+**Endpoints principais:**
+- `GET /perks` - Listar todos (filtros: type, name)
+- `GET /perks/type/:type` - Por tipo (EFFECT, ABILITY, etc)
+- `GET /perks/available/:characterId` - Perks disponíveis para personagem
+- `GET /perks/character/:characterId/active-effects` - **Efeitos ativos (Pip-Boy)**
+
+**Sintaxe de Effects:**
+```
+allparts(DR): +1x(PerkRank)       → +2 DR (rank 2)
+maximumHP: +att(E)x(PerkRank)     → +15 HP (END 5, rank 3)
+carryWeight: +25x(PerkRank)       → +50 lbs (rank 2)
+allparts(PR): +2                   → +2 PR (fixo)
+```
+
+Documentação completa: [PERKS-SYSTEM-IMPLEMENTATION.md](PERKS-SYSTEM-IMPLEMENTATION.md)
+
+### 📊 Nova Organização da Aba STAT
+
+**Ordem atualizada das categorias:**
+
+1. **STATUS** - Body locations e HP
+2. **EFFECTS** ✨ *NOVO* - Buffs/debuffs ativos
+3. **S.P.E.C.I.A.L** - Atributos (renomeado)
+4. **SKILLS** ✨ *NOVO* - 17 skills com cálculos automáticos
+5. **PERKS** - Perks do personagem
+6. **GENERAL** ✨ *NOVO* - Reputações com facções
+
+**EFFECTS:**
+- Exibe todos os efeitos ativos (perks, chems, injuries, equipment)
+- Cores: verde para positivos (+), vermelho para negativos (-)
+- Layout dividido: nome à esquerda, modificadores à direita
+
+**SKILLS:**
+- Todas as 17 skills sempre visíveis
+- Cálculo automático: **Total = SPECIAL + Rank**
+- Tagged skills marcadas com ★
+- Grid 2 colunas: lista à esquerda, detalhes à direita
+
+**GENERAL:**
+- Reputações com facções do wasteland
+- 6 níveis de reputação com cores dinâmicas:
+  - IDOLIZED (verde brilhante)
+  - LIKED (verde)
+  - ACCEPTED (verde claro)
+  - NEUTRAL (amarelo)
+  - SHUNNED (laranja)
+  - VILIFIED (vermelho)
+- Barra de progresso visual
+- Sistema de pontos (-100 a +100)
+
+### 🏢 Sistema de Facções
+
+- Gerenciamento completo de facções
+- Reputações por personagem
+- Cálculo automático de níveis baseado em pontos
+- 6 endpoints de gerenciamento
+
+---
+
+## 🎮 Features Implementadas
+
+### Frontend (React + TypeScript + Vite)
+
+- ✅ **ROBCO Terminal Interface**
+  - LoginScreen com visual ROBCO Industries
+  - Sistema de autenticação JWT (Login/Register/Guest)
+  - DEV TOOLS menu com navegação e API testing
+
+- ✅ **Sistema de Criação de Personagem**
+  - Wizard de 5 steps com validação
+  - 6 origens disponíveis (Vault Dweller, Ghoul, Super Mutant, etc)
+  - Distribuição de S.P.E.C.I.A.L (10 pontos extras)
+  - Seleção de 3 Tag Skills
+  - Review final com stats derivadas
+
+- ✅ **Pip-Boy Interface Completa**
+  - 5 Tabs: STAT, INV, DATA, MAP, RADIO
+  - Visual autêntico Fallout 4
+  - Cor oficial: `#12FF15` (RGB 18, 255, 21)
+  - Fonte: Monofonto (oficial Pip-Boy)
+  - Efeitos CRT com scanlines
+
+- ✅ **Aba STAT** (Atualizada!)
+  - 6 categorias (3 novas!)
+  - Integração com API
+  - Cálculos automáticos
+  - Efeitos visuais e cores dinâmicas
+
+- ✅ **Aba INV** - Gerenciamento de Inventário
+- ✅ **Aba DATA** - Quest log e notas
+- ✅ **Aba MAP** - Mapa local
+- ✅ **Aba RADIO** - Rádio wasteland
+
+### Backend (NestJS + Prisma + PostgreSQL)
+
+- ✅ **Autenticação JWT**
+  - Register, Login, Guest Login
+  - Roles: PLAYER, GM
+
+- ✅ **Gerenciamento de Personagens**
+  - CRUD completo
+  - 6 origens diferentes
+  - Stats derivadas automáticas
+  - Body locations com DR individual
+
+- ✅ **Sistema de Perks** ✨ *REFORMULADO*
+  - 94 perks do Fallout 2d20
+  - Parsing e cálculo automático
+  - Filtros e buscas avançadas
+
+- ✅ **Sistema de Facções** ✨ *NOVO*
+  - Gerenciamento de facções
+  - Reputações por personagem
+  - Cálculo automático de níveis
+
+- ✅ **Enciclopédia**
+  - Weapons, Armor, Consumables
+  - Perks, Ammo, Magazines, Tools
+  - Filtros por tipo e rarity
+
+- ✅ **Sistema de Inventário**
+  - Items equipáveis
+  - Mods aplicáveis
+  - Controle de quantidade e condição
+
+- ✅ **Sistema de Campanhas/Parties**
+  - Criação de mesas
+  - Convite por código
+  - Gerenciamento de jogadores
+
+---
+
+## 📚 API Endpoints
+
+### Autenticação
+- `POST /auth/register` - Criar conta
+- `POST /auth/login` - Login
+- `POST /auth/guest-login` - Login como guest
+
+### Personagens
+- `GET /characters` - Listar
+- `POST /characters` - Criar
+- `GET /characters/:id` - Detalhes
+- `PUT /characters/:id` - Atualizar
+- `DELETE /characters/:id` - Deletar
+
+### Perks ✨ *NOVO*
+- `GET /perks` - Listar todos
+- `GET /perks/:id` - Detalhes
+- `GET /perks/search/by-name/:name` - Buscar por nome
+- `GET /perks/type/:type` - Filtrar por tipo
+- `GET /perks/available/:characterId` - Perks disponíveis
+- `GET /perks/:id/effects/:rank` - Efeitos calculados
+- `GET /perks/character/:characterId/active-effects` - Efeitos ativos
+
+### Facções ✨ *NOVO*
+- `GET /factions` - Listar facções
+- `POST /factions` - Criar facção
+- `GET /factions/reputations/character/:characterId` - Reputações
+- `PUT /factions/reputations/character/:characterId` - Definir reputação
+- `POST /factions/reputations/character/:characterId/adjust` - Ajustar pontos
+
+### Enciclopédia
+- `GET /encyclopedia/weapons` - Armas
+- `GET /encyclopedia/armor` - Armaduras
+- `GET /encyclopedia/perks` - Perks
+- `GET /encyclopedia/consumables` - Consumíveis
+- Mais...
+
+**Documentação completa:** http://localhost:3000/api
+
+---
+
+## 🛠️ Tecnologias
+
+### Frontend
+- React 18
+- TypeScript
+- Vite
+- Styled Components
+- Framer Motion
+- React Router
+- Axios
+
+### Backend
+- NestJS
+- Prisma ORM
+- PostgreSQL
+- Swagger/OpenAPI
+- JWT Authentication
+- Class Validator
+
+### DevOps
+- Docker & Docker Compose
+- Multi-stage builds
+- Hot reload em desenvolvimento
+
+---
+
+## 🐛 Troubleshooting
+
+### Erro 401 (Unauthorized)
+
+**Causa:** Token expirado ou banco resetado
+
+**Solução:**
+```javascript
+// No console do navegador:
+localStorage.clear()
+// Depois faça login novamente
+```
+
+### Personagens não aparecem
+
+**Causa:** Banco de dados vazio após reset
+
+**Solução:**
+1. Faça login novamente
+2. Crie um novo personagem
+3. Se necessário, execute seeds:
+```bash
+docker exec fallout2d20-pipboy-backend-1 npx ts-node src/scripts/seed-perks.ts
+```
+
+---
+
+## 📖 Documentação Adicional
+
+- [PERKS-SYSTEM-IMPLEMENTATION.md](PERKS-SYSTEM-IMPLEMENTATION.md) - Sistema de Perks completo
+- [IMPLEMENTATION-PROGRESS.md](IMPLEMENTATION-PROGRESS.md) - Progresso da implementação
+- [Swagger API](http://localhost:3000/api) - Documentação interativa
+
+---
+
+## 📝 Changelog
+
+### v2.0.0 (Janeiro 2026) - CURRENT
+- ✨ Sistema de Perks reformulado (94 perks)
+- ✨ Nova aba EFFECTS na STAT
+- ✨ Nova aba SKILLS com cálculos automáticos
+- ✨ Nova aba GENERAL com reputações
+- ✨ Sistema de Facções implementado
+- 🔧 Parsing automático de perk effects
+- 🔧 Validação de requirements e restrictions
+- 📚 Documentação completa
+- ⚠️ **BREAKING:** Banco de dados resetado
+
+### v1.0.0
+- 🎮 Interface Pip-Boy inicial
+- 👤 Sistema de autenticação
+- 📊 Gerenciamento de personagens
+- 🎒 Sistema de inventário
+- 📖 Enciclopédia de items
+
+---
+
+## 👥 Créditos
+
+- **Sistema de RPG:** Fallout 2d20 by Modiphius Entertainment
+- **Desenvolvimento:** Projeto de fã da comunidade
+- **Design:** Inspirado no Pip-Boy dos jogos Fallout
+
+---
+
+## 📄 Licença
+
+Este projeto é um fan project não-oficial de Fallout.
+
+Fallout e Pip-Boy são marcas registradas da Bethesda Softworks LLC.
+
+---
+
+**Stay safe in the Wasteland! ☢️**

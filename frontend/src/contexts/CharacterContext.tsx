@@ -55,6 +55,36 @@ interface CharacterPerk {
   };
 }
 
+interface ActiveEffect {
+  id: string;
+  effectType: 'CHEM' | 'INJURY' | 'PERK' | 'EQUIPMENT' | 'ENVIRONMENTAL' | 'OTHER';
+  name: string;
+  description?: string;
+  attributeMods?: Record<string, number>;
+  skillMods?: Record<string, number>;
+  drMods?: Record<string, number>;
+  duration?: number;
+  startedAt: string;
+  expiresAt?: string;
+  addictionRating?: number;
+}
+
+interface Faction {
+  id: string;
+  name: string;
+  description?: string;
+  imageUrl?: string;
+}
+
+interface CharacterReputation {
+  id: string;
+  level: 'IDOLIZED' | 'LIKED' | 'ACCEPTED' | 'NEUTRAL' | 'SHUNNED' | 'VILIFIED';
+  points: number;
+  firstContact: string;
+  lastUpdate: string;
+  faction: Faction;
+}
+
 interface Character {
   id: string;
   name: string;
@@ -68,6 +98,8 @@ interface Character {
   bodyLocations: BodyLocation[];
   perks: CharacterPerk[];
   inventory: any[];
+  activeEffects: ActiveEffect[];
+  reputations: CharacterReputation[];
 }
 
 interface CharacterContextType {

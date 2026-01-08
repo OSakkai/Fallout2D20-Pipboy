@@ -109,6 +109,7 @@ model Character {
   perks         CharacterPerk[]
   inventory     InventoryItem[]
   activeEffects ActiveEffect[]
+  reputations   CharacterReputation[]
   sessionStates SessionState[]
 
   @@index([userId])
@@ -281,6 +282,53 @@ enum EffectType {
   EQUIPMENT
   ENVIRONMENTAL
   OTHER
+}
+
+// ============================================================================
+// FACTIONS & REPUTATION
+// ============================================================================
+
+model Faction {
+  id            String      @id @default(cuid())
+  name          String      @unique
+  description   String?
+  imageUrl      String?
+
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  reputations   CharacterReputation[]
+
+  @@map("factions")
+}
+
+model CharacterReputation {
+  id            String      @id @default(cuid())
+  characterId   String
+  factionId     String
+
+  level         ReputationLevel  @default(NEUTRAL)
+  points        Int         @default(0)
+
+  firstContact  DateTime    @default(now())
+  lastUpdate    DateTime    @updatedAt
+
+  character     Character   @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  faction       Faction     @relation(fields: [factionId], references: [id], onDelete: Cascade)
+
+  @@unique([characterId, factionId])
+  @@index([characterId])
+  @@index([factionId])
+  @@map("character_reputations")
+}
+
+enum ReputationLevel {
+  IDOLIZED
+  LIKED
+  ACCEPTED
+  NEUTRAL
+  SHUNNED
+  VILIFIED
 }
 
 // ============================================================================
@@ -528,23 +576,31 @@ enum ModType {
 }
 
 model PerkMaster {
-  id                String            @id @default(cuid())
-  name              String            @unique
-  ranks             Int               @default(1)
+  id              String      @id @default(cuid())
+  name            String      @unique
+  type            PerkType
+  requirements    String?     // Format: "S:(5), I:(6)" or "–" for none
+  minLevel        String?     // Format: "perkrank(1):2,perkrank(2):6" or single number
+  restriction     String?     // "Not a robot", "One for party only", etc
+  effects         String?     // Format: "allparts(DR): +1x(PerkRank)"
+  description     String      @db.Text
 
-  requirements      Json
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
 
-  condition         String
-  benefit           String
-
-  mechanicalEffects Json?
-
-  corebookPage      Int?
-
-  characterPerks    CharacterPerk[]
+  characterPerks  CharacterPerk[]
 
   @@index([name])
+  @@index([type])
   @@map("perk_master")
+}
+
+enum PerkType {
+  EFFECT      // Modifies stats, resistances, HP, carry weight
+  ABILITY     // Manual implementation by GM
+  CRAFTING    // Unlocks craft recipes
+  COMPANION   // Dogmeat perk
+  SKILLS      // Increases SPECIAL or SKILLS, adds TAG SKILLS
 }
 
 model AmmoMaster {

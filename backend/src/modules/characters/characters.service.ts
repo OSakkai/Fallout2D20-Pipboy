@@ -218,7 +218,13 @@ export class CharactersService {
             perk: true,
           },
         },
-        inventory: true, // Simplified - just get inventory items without nested relations
+        inventory: true,
+        activeEffects: true,
+        reputations: {
+          include: {
+            faction: true,
+          },
+        },
         campaign: {
           select: {
             id: true,

@@ -5,6 +5,9 @@ import { PIPBOY_COLORS, PIPBOY_TEXT_GLOW, PIPBOY_TYPOGRAPHY } from '../../styles
 import { PerksTab } from './PerksTabWithData';
 import { useSound } from '../../hooks/useSound';
 import { useCharacter } from '../../contexts/CharacterContext';
+import { EffectsCategory } from './Categories/EffectsCategory';
+import { SkillsCategory } from './Categories/SkillsCategory';
+import { GeneralCategory } from './Categories/GeneralCategory';
 
 // Import all styled components from original StatTab.tsx
 const StatContainer = styled.div`
@@ -347,7 +350,7 @@ const LoadingMessage = styled.div`
   text-shadow: ${PIPBOY_TEXT_GLOW.standard};
 `;
 
-type SubTab = 'status' | 'special' | 'perks';
+type StatSubTab = 'status' | 'effects' | 'special' | 'skills' | 'perks' | 'general';
 
 interface SPECIALAttribute {
   name: string;
@@ -597,7 +600,7 @@ const StatusContent = () => {
 };
 
 export const StatTab = () => {
-  const [activeSubTab, setActiveSubTab] = useState<SubTab>('special');
+  const [activeSubTab, setActiveSubTab] = useState<StatSubTab>('special');
   const [selectedSPECIALIndex, setSelectedSPECIALIndex] = useState(0);
   const { playBeep } = useSound();
   const { character } = useCharacter();
@@ -619,7 +622,7 @@ export const StatTab = () => {
 
   const selectedSPECIAL = specialAttributes[selectedSPECIALIndex];
 
-  const handleSubTabChange = (tab: SubTab) => {
+  const handleSubTabChange = (tab: StatSubTab) => {
     playBeep();
     setActiveSubTab(tab);
   };
@@ -631,21 +634,47 @@ export const StatTab = () => {
           $active={activeSubTab === 'status'}
           onClick={() => handleSubTabChange('status')}
         >
-          Status
+          STATUS
+        </SubNavButton>
+        <SubNavButton
+          $active={activeSubTab === 'effects'}
+          onClick={() => handleSubTabChange('effects')}
+        >
+          EFFECTS
         </SubNavButton>
         <SubNavButton
           $active={activeSubTab === 'special'}
           onClick={() => handleSubTabChange('special')}
         >
-          Special
+          S.P.E.C.I.A.L
+        </SubNavButton>
+        <SubNavButton
+          $active={activeSubTab === 'skills'}
+          onClick={() => handleSubTabChange('skills')}
+        >
+          SKILLS
         </SubNavButton>
         <SubNavButton
           $active={activeSubTab === 'perks'}
           onClick={() => handleSubTabChange('perks')}
         >
-          Perks
+          PERKS
+        </SubNavButton>
+        <SubNavButton
+          $active={activeSubTab === 'general'}
+          onClick={() => handleSubTabChange('general')}
+        >
+          GENERAL
         </SubNavButton>
       </SubNav>
+
+      {activeSubTab === 'status' && (
+        <StatusContent />
+      )}
+
+      {activeSubTab === 'effects' && (
+        <EffectsCategory />
+      )}
 
       {activeSubTab === 'special' && (
         <ContentGrid>
@@ -684,12 +713,16 @@ export const StatTab = () => {
         </ContentGrid>
       )}
 
-      {activeSubTab === 'status' && (
-        <StatusContent />
+      {activeSubTab === 'skills' && (
+        <SkillsCategory />
       )}
 
       {activeSubTab === 'perks' && (
         <PerksTab />
+      )}
+
+      {activeSubTab === 'general' && (
+        <GeneralCategory />
       )}
     </StatContainer>
   );
